@@ -1,6 +1,6 @@
 Abstract
 
-This paper is supposed to provide a fundemental overview (and usage) of the Scale-Invariant Feature Transform (SIFT) as proposed in 2004 by David G. Lowe. 
+This paper is supposed to provide a fundemental overview (and usage) of the Scale-Invariant Feature Transform (SIFT) as proposed in 2004 by David G. Lowe. It is an algorithmn that extracts distinctive features on different scales from an image, which in turn are used for further computations!? such as image matching or object detection 
 Dabei wird genauer auf die einzelnen Schitte des Verfahrens zur Berechnung dieser SIFT-Feature eingegangen, sowie deren Nutzen erklärt ... Abschließend wird noch etwas genauer auf zwei konkrete Anwendungsbeispiele eingegangen.
 
 Introduction

@@ -1,0 +1,27 @@
+Hallo Christian, 
+
+im Anhang befindet sich meine Gliederung bezüglich der Seminararbeit zum Thema SIFT. Ich habe mich dazu entschieden die Arbeit auf Englisch zu verfassen
+
+
+
+
+1. Introduction
+    1.1 Motivation and Usage 							(Object recognitzion, panorama stitching, gesture recognition, object tracking in videos)
+    1.2 Stable and recognizable image features 			(importance of invariance properties)
+
+2. Extracting SIFT-Features
+    2.1 Selecting Keypoints from Scale-Space Extrema
+    2.2 Keypoint refinement
+    2.3 Keypoint filtering
+    2.4 Orientation assignment
+    2.5 Constructing feature descriptors	
+
+3. Feature matching
+	3.1 Nearest neighbor indexing						(k-d tree / Best-Bin-First)
+	3.2 Detecting outliers								(Beispiel: RAN-SAC)
+
+4. Conclusion											(drawbacks; ...)
+
+
+Viele Grüße,
+Leopold Gaube
