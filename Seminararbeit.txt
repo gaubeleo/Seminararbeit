@@ -1,0 +1,20 @@
+Abstract
+
+This paper is supposed to provide a fundemental overview (and usage) of the Scale-Invariant Feature Transform (SIFT) as proposed in 2004 by David G. Lowe. 
+Dabei wird genauer auf die einzelnen Schitte des Verfahrens zur Berechnung dieser SIFT-Feature eingegangen, sowie deren Nutzen erklärt ... Abschließend wird noch etwas genauer auf zwei konkrete Anwendungsbeispiele eingegangen.
+
+Introduction
+Mit dem extremen Wachstum der Rechenleistung Anfang der 2000er Jahre
+
+
+Scale Space
+The SIFT algorithmn uses a scale-space representation to find potential locations for good keypoints in an image with a high recognition value. That means the image will be smoothed with different sizes of the Gaussian kernel and the resulting images stack-up to form a so-called Gaussian pyramid. With each doubling of the kernel size the image can be reduced to half its rows and columns without any loss of information?!, but resulting in major computational performance boosts. all images of the same size in the pyramid are considered form an octave.
+Smoothing an image with a small kernel will supress fine structures, whereas smoothing with a large kernel only leaves coarse/rough contours. 
+Subtracting every two neighboured images of the same octave in the Gaussians pyramid gives us a Difference of Gaussians (DoG) pyramid with one image less in each octave then before. In order to finally get the potential keypoints each pixel of every DoG (except the first and last of each octave) is compared to its eight pixel neighbours as well as its 18 neighbours from the DoGs laying directly above and below it in the pyramid.
+- invariance to scale
+
+Orientation Assignment
+
+
+Descriptor construction
+Once the location, scale and orientation of each keypoint is computed, the final descriptor, which is supposed to represent this keypoint, can be constructed. 
