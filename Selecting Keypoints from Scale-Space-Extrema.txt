@@ -1,0 +1,19 @@
+Selecting Keypoints from Scale-Space-Extrema
+
+Goal --> retrieve mutiple potentially good pixel locations of recognizable points of interest. these locations are called keypoints
+
+The SIFT algorithmn uses a scale-space representation to find potential locations for good keypoints in an image with a high recognition value. That means the image will be smoothed with different scales \sigma of the Gaussian blur(/kernel) and the resulting images stack-up to form a so-called Gaussian pyramid. Smoothing/Blurring an image with a low \sigma value will supress fine structures, whereas smoothing with a large \sigma only leaves coarse/rough contours. That is exactly what we need in order to find destintive features no matter how large or small it is depicted in the image. (metioning of: "approximation of Laplacian of Gaussians" ?!) 
+
+Lowe has found that using a initial \sigma = 1.6 and gradually adjusting each ensuing scale of Gaussian Blur by a constant factor of k = 2^(1/3) will achieve the best results (references).
+
+After every three blured images - which also means after each doubling of the \sigma scale - the image can be reduced to a quarter of its previous number of pixels by discarding every second row and column of the previous Gaussian image. This procedure does not affect the accuracy of ?? (because the sampling theorem is not violated (reverense/proof)), but results in major computational performance boosts. All images of the same size in the pyramid are considered form an octave. 
+
+Subtracting one Gaussian blurred image pixelwise from another results in a (so-called) Difference of Gaussians. Doing this for every two neighboured images of the same octave in the Gaussians pyramid gives us a Difference of Gaussians (DoG) pyramid with one image less in each octave then before. In order to compensate for this lost image we previously need to compute one more Gaussian blurred image at the end of each octave. Keep in mind that the resampling for the first image of the next octave needs to be done on the same image as before.
+
+In order to finally retrieve the potential keypoints, each pixel of every Difference of Gaussian (except the first and last of each octave --> reason!!!) is compared to its eight pixel neighbours as well as its 18 neighbours from the DoGs laying directly above and below it in the pyramid (see Figure 2.x). A pixel's location is taken into the set of our potential keypoints only if it's value is either a minimum or a maximum in it's surrounding neighbourhood. 
+As mentioned before smoothing/blurring an image with different strengths results in images with a different amount of detail. A miniumum as well as a maximum (in scale-space/DoG) means that a structure is still visible in one Gaussian image, but has been "smoothed away" by the stroger Gaussian kernel of the next. This means we do not only get the location of our potential keypoint, but also the size of the feature that we want to localize, which is equivalent to the scale of the DoG where the minimum or maximum has been found.
+
+
+
+
+

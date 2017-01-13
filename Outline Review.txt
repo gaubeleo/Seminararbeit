@@ -1,9 +1,7 @@
 Hallo Christian, 
 
-im Anhang befindet sich meine Gliederung bezüglich der Seminararbeit zum Thema SIFT. Ich habe mich dazu entschieden die Arbeit auf Englisch zu verfassen
-
-
-
+weiter unten befindet sich meine Gliederung bezüglich der Seminararbeit zum Thema SIFT.
+Für eine Besprechung würde ich natürlich in deinem Büro vorbeischauen.
 
 1. Introduction
     1.1 Motivation and Usage 							(Object recognitzion, panorama stitching, gesture recognition, object tracking in videos)
@@ -11,7 +9,7 @@ im Anhang befindet sich meine Gliederung bezüglich der Seminararbeit zum Thema 
 
 2. Extracting SIFT-Features
     2.1 Selecting Keypoints from Scale-Space Extrema
-    2.2 Keypoint refinement
+    (2.2 Keypoint refinement)							(ich würde diesen Teil eventuell weglassen, falls die Arbeit sonst zu umfangreich werden sollte, da dieser Schritt nicht unbedingt notwendig ist)
     2.3 Keypoint filtering
     2.4 Orientation assignment
     2.5 Constructing feature descriptors	

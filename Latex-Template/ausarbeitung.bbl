@@ -1,0 +1,13 @@
+\begin{thebibliography}{Lam95}
+
+\bibitem[Lam95]{lamport}
+Leslie Lamport.
+\newblock {\em Das LaTeX-Handbuch}.
+\newblock Addison-Wesley, 1995.
+
+\bibitem[vW93]{werder}
+Lutz von Werder.
+\newblock {\em Lehrbuch des wissenschaftlichen Schreibens}.
+\newblock Schibri-Verlag, 1993.
+
+\end{thebibliography}
