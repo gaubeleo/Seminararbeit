@@ -1,0 +1,14 @@
+Keypoint Filtering
+
+Some of the keypoints we obtained earlier might not represent good features due to a lack of contrast or unstable localization along an edge, so we need to reject such keypoints. 
+A low contrast also means that we might not find the same features of the same object in a different image with a little bit more noise. Luckily we can easily compute the contrast using the function from before (tayler expansion of the scale space function), but this time shifted by the exact location of the extremum. 
+
+D(^x) = D + 1/2 ...
+
+Lowe found that if the absolute value of that function is less than 0.03 there is just not enough contrast for it to be a stable feature.
+
+Even if there is enough contrast the algorithmn might struggle to exactly localize a keypoint along an edge. That is why we rather have corner-like features than only edge-like.
+To further illustrate this problem, we can simply look at an arbitrary thick black line on white background as shown in Figure 3.x. Using the scale-space extrema we will find many potential keypoints all along this line, but their represented features will look all the same with the exception of the two features at each end of the line. If you were only given a middle section of that line it would be impossible to tell the original location, whereas an end section can easily be matched by means of (its white part at the end)
+
+In order to mathematically determine whether a given feature is corner-like (/stable) or not, we can use a 2x2 Hessian matrix at its keypoint location and scale 
+

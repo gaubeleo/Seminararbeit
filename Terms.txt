@@ -1,0 +1,6 @@
+useful Terms
+
+keypoint
+descriptor
+feature
+stable
