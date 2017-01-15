@@ -1,0 +1,3 @@
+Exact keypoint localization
+
+Using scale-space extrema we obtained a set of potential keypoint locations. 

@@ -9,7 +9,7 @@ Für eine Besprechung würde ich natürlich in deinem Büro vorbeischauen.
 
 2. Extracting SIFT-Features
     2.1 Selecting Keypoints from Scale-Space Extrema
-    (2.2 Keypoint refinement)							(ich würde diesen Teil eventuell weglassen, falls die Arbeit sonst zu umfangreich werden sollte, da dieser Schritt nicht unbedingt notwendig ist)
+    (2.2 Keypoint refinement) aka. Exact keypoint localization	
     2.3 Keypoint filtering
     2.4 Orientation assignment
     2.5 Constructing feature descriptors	

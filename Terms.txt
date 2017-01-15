@@ -4,3 +4,11 @@ keypoint
 descriptor
 feature
 stable
+
+noise
+
+edge
+corner
+
+gradient & its orientation
+histogram
