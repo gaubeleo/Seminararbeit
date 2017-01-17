@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.9)  15 JAN 2017 19:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.9)  17 JAN 2017 11:11
 entering extended mode
 **./SIFT.tex
 (SIFT.tex
@@ -72,33 +72,74 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 )
 \epsfxsize=\dimen105
 \epsfysize=\dimen106
-) (SIFT.aux)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
+Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen107
+\captionmargin@=\dimen108
+\captionwidth=\dimen109
+\caption@tempdima=\dimen110
+\caption@indent=\dimen111
+\caption@parindent=\dimen112
+\caption@hangindent=\dimen113
+)
+\c@ContinuedFloat=\count88
+)
+\c@subfigure=\count89
+\c@subtable=\count90
+) (SIFT.aux
+
+LaTeX Warning: Label `subfig:org' multiply defined.
+
+
+LaTeX Warning: Label `sub@subfig:org' multiply defined.
+
+
+LaTeX Warning: Label `subfig:org' multiply defined.
+
+
+LaTeX Warning: Label `sub@subfig:org' multiply defined.
+
+
+LaTeX Warning: Label `subfig:org' multiply defined.
+
+
+LaTeX Warning: Label `sub@subfig:org' multiply defined.
+
+)
 \openout1 = `SIFT.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
-LaTeX Font Info:    ... okay on input line 9.
-("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+ ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count88
-\scratchdimen=\dimen107
+\scratchcounter=\count91
+\scratchdimen=\dimen114
 \scratchbox=\box26
-\nofMPsegments=\count89
-\nofMParguments=\count90
+\nofMPsegments=\count92
+\nofMParguments=\count93
 \everyMPshowfont=\toks17
-\MPscratchCnt=\count91
-\MPscratchDim=\dimen108
-\MPnumerator=\count92
-\makeMPintoPDFobject=\count93
+\MPscratchCnt=\count94
+\MPscratchDim=\dimen115
+\MPnumerator=\count95
+\makeMPintoPDFobject=\count96
 \everyMPtoPDFconversion=\toks18
 ) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
@@ -145,37 +186,112 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 14.
+(Font)              <7> on input line 31.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 14.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 14.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 24.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 24.
- [1
+(Font)              <5> on input line 31.
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] (SIFT.aux) ) 
+<images/lenna.png, id=1, 385.44pt x 385.44pt>
+File: images/lenna.png Graphic file (type png)
+ <use images/lenna.png>
+Package pdftex.def Info: images/lenna.png used on input line 48.
+(pdftex.def)             Requested size: 128.0374pt x 128.03662pt.
+
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 48--49
+[][] 
+ []
+
+<images/gaussian_at_sigma_3.png, id=2, 513.92pt x 513.92pt>
+File: images/gaussian_at_sigma_3.png Graphic file (type png)
+
+<use images/gaussian_at_sigma_3.png>
+Package pdftex.def Info: images/gaussian_at_sigma_3.png used on input line 54.
+(pdftex.def)             Requested size: 128.0374pt x 128.0327pt.
+
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 54--55
+[][] 
+ []
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 55.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 55.
+<images/gaussian_at_sigma_10.png, id=3, 513.92pt x 513.92pt>
+File: images/gaussian_at_sigma_10.png Graphic file (type png)
+
+<use images/gaussian_at_sigma_10.png>
+Package pdftex.def Info: images/gaussian_at_sigma_10.png used on input line 60.
+
+(pdftex.def)             Requested size: 128.0374pt x 128.0327pt.
+
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 60--61
+[][] 
+ []
+
+<images/DoG_at_sigma_2.png, id=4, 513.92pt x 513.92pt>
+File: images/DoG_at_sigma_2.png Graphic file (type png)
+
+<use images/DoG_at_sigma_2.png>
+Package pdftex.def Info: images/DoG_at_sigma_2.png used on input line 68.
+(pdftex.def)             Requested size: 128.0374pt x 128.0327pt.
+
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 68--69
+[][] 
+ []
+
+<images/DoG_at_sigma_5.png, id=5, 513.92pt x 513.92pt>
+File: images/DoG_at_sigma_5.png Graphic file (type png)
+
+<use images/DoG_at_sigma_5.png>
+Package pdftex.def Info: images/DoG_at_sigma_5.png used on input line 74.
+(pdftex.def)             Requested size: 128.0374pt x 128.0327pt.
+
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 74--75
+[][] 
+ []
+
+<images/DoG_at_sigma_13.png, id=6, 513.92pt x 513.92pt>
+File: images/DoG_at_sigma_13.png Graphic file (type png)
+
+<use images/DoG_at_sigma_13.png>
+Package pdftex.def Info: images/DoG_at_sigma_13.png used on input line 80.
+(pdftex.def)             Requested size: 128.0374pt x 128.0327pt.
+
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 80--81
+[][] 
+ []
+
+[1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2 <./images/lenna.png> <
+./images/gaussian_at_sigma_3.png (PNG copy)> <./images/gaussian_at_sigma_10.png
+ (PNG copy)> <./images/DoG_at_sigma_2.png (PNG copy)> <./images/DoG_at_sigma_5.
+png (PNG copy)> <./images/DoG_at_sigma_13.png (PNG copy)>] [3] (SIFT.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 1582 strings out of 493333
- 22608 string characters out of 3139201
- 85108 words of memory out of 3000000
- 5108 multiletter control sequences out of 15000+200000
- 7587 words of font info for 27 fonts, out of 3000000 for 9000
+ 2744 strings out of 493333
+ 43791 string characters out of 3139201
+ 109431 words of memory out of 3000000
+ 6255 multiletter control sequences out of 15000+200000
+ 6673 words of font info for 24 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,6n,25p,585b,189s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Progr
-am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts
-/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
-onts/cm/cmr7.pfb>
-Output written on SIFT.pdf (2 pages, 72865 bytes).
+ 42i,7n,40p,664b,516s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
+les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
+mr9.pfb>
+Output written on SIFT.pdf (3 pages, 1416718 bytes).
 PDF statistics:
- 33 PDF objects out of 1000 (max. 8388607)
+ 51 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
