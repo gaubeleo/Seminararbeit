@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.9)  17 JAN 2017 11:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.9)  17 JAN 2017 23:22
 entering extended mode
 **./SIFT.tex
 (SIFT.tex
@@ -189,109 +189,115 @@ G,.JBIG2,.JB2,.eps]
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 31.
+(Font)              <12> on input line 17.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 31.
+(Font)              <8> on input line 17.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 17.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 53.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 53.
+ [1
 
-<images/lenna.png, id=1, 385.44pt x 385.44pt>
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<images/lenna.png, id=12, 385.44pt x 385.44pt>
 File: images/lenna.png Graphic file (type png)
  <use images/lenna.png>
-Package pdftex.def Info: images/lenna.png used on input line 48.
+Package pdftex.def Info: images/lenna.png used on input line 70.
 (pdftex.def)             Requested size: 128.0374pt x 128.03662pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 48--49
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 70--71
 [][] 
  []
 
-<images/gaussian_at_sigma_3.png, id=2, 513.92pt x 513.92pt>
+<images/gaussian_at_sigma_3.png, id=13, 513.92pt x 513.92pt>
 File: images/gaussian_at_sigma_3.png Graphic file (type png)
 
 <use images/gaussian_at_sigma_3.png>
-Package pdftex.def Info: images/gaussian_at_sigma_3.png used on input line 54.
+Package pdftex.def Info: images/gaussian_at_sigma_3.png used on input line 76.
 (pdftex.def)             Requested size: 128.0374pt x 128.0327pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 54--55
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 76--77
 [][] 
  []
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 55.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 55.
-<images/gaussian_at_sigma_10.png, id=3, 513.92pt x 513.92pt>
+(Font)              <9> on input line 77.
+<images/gaussian_at_sigma_10.png, id=14, 513.92pt x 513.92pt>
 File: images/gaussian_at_sigma_10.png Graphic file (type png)
 
 <use images/gaussian_at_sigma_10.png>
-Package pdftex.def Info: images/gaussian_at_sigma_10.png used on input line 60.
+Package pdftex.def Info: images/gaussian_at_sigma_10.png used on input line 82.
 
 (pdftex.def)             Requested size: 128.0374pt x 128.0327pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 60--61
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 82--83
 [][] 
  []
 
-<images/DoG_at_sigma_2.png, id=4, 513.92pt x 513.92pt>
+<images/DoG_at_sigma_2.png, id=15, 513.92pt x 513.92pt>
 File: images/DoG_at_sigma_2.png Graphic file (type png)
 
 <use images/DoG_at_sigma_2.png>
-Package pdftex.def Info: images/DoG_at_sigma_2.png used on input line 68.
+Package pdftex.def Info: images/DoG_at_sigma_2.png used on input line 90.
 (pdftex.def)             Requested size: 128.0374pt x 128.0327pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 68--69
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 90--91
 [][] 
  []
 
-<images/DoG_at_sigma_5.png, id=5, 513.92pt x 513.92pt>
+<images/DoG_at_sigma_5.png, id=16, 513.92pt x 513.92pt>
 File: images/DoG_at_sigma_5.png Graphic file (type png)
 
 <use images/DoG_at_sigma_5.png>
-Package pdftex.def Info: images/DoG_at_sigma_5.png used on input line 74.
+Package pdftex.def Info: images/DoG_at_sigma_5.png used on input line 96.
 (pdftex.def)             Requested size: 128.0374pt x 128.0327pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 74--75
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 96--97
 [][] 
  []
 
-<images/DoG_at_sigma_13.png, id=6, 513.92pt x 513.92pt>
+<images/DoG_at_sigma_13.png, id=17, 513.92pt x 513.92pt>
 File: images/DoG_at_sigma_13.png Graphic file (type png)
 
 <use images/DoG_at_sigma_13.png>
-Package pdftex.def Info: images/DoG_at_sigma_13.png used on input line 80.
+Package pdftex.def Info: images/DoG_at_sigma_13.png used on input line 102.
 (pdftex.def)             Requested size: 128.0374pt x 128.0327pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 80--81
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 102--103
 [][] 
  []
 
-[1
-
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2 <./images/lenna.png> <
-./images/gaussian_at_sigma_3.png (PNG copy)> <./images/gaussian_at_sigma_10.png
- (PNG copy)> <./images/DoG_at_sigma_2.png (PNG copy)> <./images/DoG_at_sigma_5.
-png (PNG copy)> <./images/DoG_at_sigma_13.png (PNG copy)>] [3] (SIFT.aux)
+[2] [3 <./images/lenna.png> <./images/gaussian_at_sigma_3.png (PNG copy)> <./im
+ages/gaussian_at_sigma_10.png (PNG copy)> <./images/DoG_at_sigma_2.png (PNG cop
+y)> <./images/DoG_at_sigma_5.png (PNG copy)> <./images/DoG_at_sigma_13.png (PNG
+ copy)>] [4] (SIFT.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2744 strings out of 493333
- 43791 string characters out of 3139201
- 109431 words of memory out of 3000000
- 6255 multiletter control sequences out of 15000+200000
- 6673 words of font info for 24 fonts, out of 3000000 for 9000
+ 2759 strings out of 493333
+ 43952 string characters out of 3139201
+ 108431 words of memory out of 3000000
+ 6264 multiletter control sequences out of 15000+200000
+ 8807 words of font info for 31 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,7n,40p,664b,516s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,7n,40p,664b,512s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
-ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
-fonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/c
-mr9.pfb>
-Output written on SIFT.pdf (3 pages, 1416718 bytes).
+ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Fil
+es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb>
+Output written on SIFT.pdf (4 pages, 1717849 bytes).
 PDF statistics:
- 51 PDF objects out of 1000 (max. 8388607)
+ 66 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
 
