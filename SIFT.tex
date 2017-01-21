@@ -23,15 +23,13 @@
 	The following paper is supposed to give an overview of how the Scale-Invariant Feature Transform, short SIFT, works. It was introduced by David G. Lowe in 1999 and enhanced multiple times until he published his final version in 2004. This algorithm extracts distinctive features which can be used for matching objects acorss multiple images.
 	
 	\end{abstract}
-	
-	
-	
+		
 	\section{Introduction}
 	\subsection{Motivation and Usage}
 	
 	The main goal of the Scale Invariant Feature Transform is finding distinct points in an image which are likely to appear in a different image, depicting the same object(s). These distinct points are called keypoints and are being used to compute a feature descriptor which summarizes the local neighbourhood around that keypoint's location. 
 	
-	Supposing that corresponding keypoints can be found over multiple images, ... correct matches of their feature descriptors can in turn be used in a range of computer vision tasks. 
+	Supposing that corresponding keypoints can be found over multiple images, ... correct matches of their feature descriptors can in turn be used in a range of computer vision tasks:
 	
 	Lowe proposed a way of how SIFT features can be used to recognize objects even under difficult conditions. A Hough-transform is being used to even detect object which are partially occluded. Furthermore SIFT can also be used for tracking objects in videos.
 		
@@ -177,17 +175,28 @@
 	
 	\subsection{Constructing the feature descriptor}
 	
-	There are many possibilities to describe the area around a keypoint. For instance we could be storing the intensity or color values inside our feature descriptor. However, the disadvantage of this approach is that many images are taken under different lighting conditions. Hence intensity values of corresponding keypoints might vary a lot. Image gradients are a better choice for constructing a feature descriptor, because they only coincide with change of pixel intensity rather than intensity values itself. 
+	There are many possibilities to describe the area around a keypoint. For instance we could be storing the intensity or color values inside our feature descriptor. However, the disadvantage of this approach is that many images are taken under different lighting conditions. Hence intensity values of corresponding keypoints might vary a lot. Image gradients are a better choice for constructing a feature descriptor, because they only coincide with change of pixel intensity, rather than intensity values itself. 
 	
 	relative gradient directions / rotated 16x16 neighbourhood
-	The SIFT feature descriptor uses gradients in a 16x16 neighbourhood around each keypoint. These gradients will further be organized in 4x4 cells, so there will be a total of 16 of those cells. Analogous to section 2.4 each cell accumulates its (magnitude and gaussian function weighted) gradients in an orientation histogram with only 8 different bins. Hence each bin represents 45° which allows for more "wiggle" room of the gradients directions...
+	SIFT uses all gradients within a 16x16 neighbourhood around each keypoint. These gradients will further be organized in 4x4 cells, so there will be a total of 16 cells. Analogous to section 2.4 each cell accumulates its gradients in an orientation histogram, but this time with only 8 bins. Hence each bin represents 45° which allows for small inaccuracies of the gradients directions, but keeps the final descriptor small...
 	
-	\section{Problems}
+	The feature descriptor is actually just a sequence of linking all values of every cell histogram together in a consistent manner. 
+	Every keypoint uses 4x4 cells with 8 orientation bins each. Thus accumulating all these values in a single descriptor, results in a 128 dimensional vector.
+	
+	Experiments show that normalizing the vector to unit length helps to cope with illumination changes. By limiting every orientation value in the cell histogram to a maximum of 0.2, we garantee that no single dominant gradient can supress the other gradients. Have multiple strong orientations in our final descriptor is more desirable than having a single dominant one, because "non-linear illumination changes can also occur due to camera saturation or due to illumination changes that affect 3D surfaces with differing orientations by different amounts" [Zitat 6.1 paper].
+	
+	\section{Matching}
+	
+	
+	
+	\section{Problematic situations}
 		% What SIFT cannot do!!!
+		
+	We have seen that SIFT features are highly thought-out, but of course they are not perfect:
 	
-	SIFT features can be computed relatively fast, however matching over a vast database might still take a long time. Herbert Bay addresses this problem in his publication "Speeded Up Robust Features" (SURF) from 2006. His SURF features are based on SIFT and can be computed even faster. Their smaller 64 dimensional descriptor allows for faster matching of its features with only minor loss in accuracy and are therefore better suited for (real-time applications).
+	SIFT features can be computed relatively fast, however matching over a vast database might still take a long time. Herbert Bay addresses this problem in his publication "Speeded Up Robust Features" (SURF) from 2006. His SURF features are based on SIFT and can be computed even faster. Their smaller 64 dimensional descriptor allows for faster matching of its features with only minor loss in accuracy and therefore might be better suited for real-time applications.
 	
-	In one picture a subject might be well lit by sunshine and therefore have high pixel values and also strong contrast due to shadows, whereas another picture might be taken in cloud weather, resulting in low intensity values and a more flat contrast.
+	In one picture a subject might be well lit by sunshine whereas another picture of the same scene might be taken in cloud weather. Hence the first will have high pixel intensity values and also strong contrast due to shadows, whereas the other will have low intensity values and flat contrast. Contrast... Shadows also tend to cause strong gradients which might corruptsome descriptors.
 	
 	repetative structures like a fence (Bilder) / multiple occurences of the same thing
 	
@@ -197,9 +206,8 @@
 	
 	\section{Conclusion}
 	
-	SIFT features are a great way to corretly match many corresponding keypoints across images. Their invariance and robustness properties allow for enough laditude in change of perspective and illumination (which can never be fully avoided in images).
-	
+	The SIFT algorithm is a great way to extract distincting points from an image and describe their surrounding area in an invariant manner by constructing a feature descriptor. These descriptors can in turn be used to match corresponding points across images. Their invariance and robustness properties allow for stable matching even if the reference images differ in scale, rotation or lighting of the depicted object(s). Slight changes in 3D viewing angle are also accounted for.
+	Corretly matching few of these distinct points is the major foundation of many image processing tasks like object recognition, panorama stichting and gesture recognition.
 	...
-	
 	
 \end{document}
