@@ -11,7 +11,7 @@
 \begin{document}
 	
 	% Titelseite ---------------
-		\title{The Scale-Invariant-Feature-Transform} 
+		\title{The Scale Invariant Feature Transform} 
 		\author{Leopold Gaube}
 		\date{15.01.2017} 
 		\maketitle
@@ -41,26 +41,9 @@
 	\section{Extracting SIFT Features}		
 	\subsection{Selecting keypoints from scale-space extrema}
 	
-	The first step of the SIFT algorithm is to extract potential keypoints.
-	It would be a bad idea for an image feature-based algorithm to consider every possible pixel location, because computation for a single image would take a long time and most features would be unusable for exact localization due to their lack of image information. 
+	The first step of the SIFT algorithm is to extract potential keypoints. It would be a bad idea for an image feature-based algorithm to consider every possible pixel location, because computation for a single image would take a long time and most features would be unusable for exact localization due to lack of image information. 
 	
-	That is why a (sampling strategy) has to be applied in order to find good keypoints. A keypoint is considered good, if its feature exhibits a (high recognition value). Therefore, it should be invariant to numerous transformations such as rotation, scale, distortion and brightness but also to change in illumination, 3D viewpoint and addition of noise. Of course, it would be really hard to satisfy all those properties, but the Scale-Invariant-Feature-Transform turns out to be quite good, which will further be examined in this paper.
-	
-	Lowe uses for his keypoint sampling approach a so-called scale-space representation of the given image. That means the image will be smoothed with different scales $\sigma$ of the Gaussian blur(/kernel). Smoothing/Blurring (synonym?) an image with a low $\sigma$ value will suppress fine structures, whereas smoothing with a large $\sigma$ only leaves coarse/rough contours. The results of the Gaussian blurring can be seen in figure 1(b) and 1(c). That is exactly what we need in order to find distinctive features no matter how large or small they are depicted in the image. The resulting images stack-up to form a Gaussian pyramid.
-	
-	Lowe has found that using an initial $\sigma = 1.6$ and gradually adjusting each ensuing scale of the Gaussian blur by a constant factor of $k = 2^{1/3}$ will achieve the best results [reference paper].
-	
-	After every three blurred images - which also means after each doubling of the $\sigma$ scale - the image can be downsampled by a factor of two. All images of the same size in the pyramid are considered to form an octave. The accuracy of sampling relative to $\sigma$ stays roughly the same for all octaves, but results in major computational performance boosts.
-	
-	Subtracting one Gaussian blurred image pixelwise from another results in a Difference of Gaussians. Doing this for every two neighbored images of the same octave in the Gaussians pyramid gives us a Difference of Gaussians (DoG) pyramid with one image less in each octave then before. In order to compensate for this lost image, we previously need to compute one more Gaussian blurred image at the end of each octave. Keep in mind that the resampling for the first image of the next octave should to be done on the same image as before.
-	
-	To finally retrieve the potential keypoints, each pixel of every Difference of Gaussian (except the first and last of each octave --> reason + 2 more Gaussian images needed!!!) is compared to its eight pixel neighbors as well as its 18 neighbors from the DoGs laying directly above and below it in the pyramid (see figure 2.x). A pixel's location is taken into the set of our potential keypoints only if its value is either a minimum or a maximum in its surrounding neighborhood. 
-	
-	As mentioned before smoothing/blurring an image with different strengths results in images with a different amount of detail. A minimum or maximum in scale-space means that a structure is still visible in one Gaussian image, but has been "smoothed away" by the stronger Gaussian kernel of the next. This leads to a large pixel value difference along the structure between these two Gaussians. A Difference of Gaussians has therefore a strong response to edges, as explicated in "Gaussian-based edge-detection methods-a survey" by M. Basu.
-
-	(-->lenna DoG)
-	
-	If we look at two images depicting the same object, but one taken from further away, we will still find corresponding keypoints, but on different scales of the DoG pyramid. --> Scale Invariant
+	That is why we have to choose keypoints based on its recognition value which is the probability that these keypoints are highly likely to appear in a another image showing the same scene. Therefore, it should be invariant to numerous transformations such as rotation, scale, distortion and brightness but also to change in illumination, 3D viewpoint and addition of noise. Of course, it would be really hard to satisfy all these properties, but the Scale Invariant Feature Transform satisfies most of them which will be further examined in this paper.
 	
 	\begin{figure}[ht]
 		\begin{center}
@@ -72,38 +55,53 @@
 			~
 			\begin{subfigure}[normla]{0.3\textwidth}
 				\includegraphics[width=4.5cm]{images/gaussian_at_sigma_3.png}
-				\caption{Gaussian with $\sigma = 1.6$}
+				\caption{Gaussian with $\sigma = 3.2$}
 				\label{subfig:gauss1}
 			\end{subfigure}
 			~
 			\begin{subfigure}[normla]{0.3\textwidth}
 				\includegraphics[width=4.5cm]{images/gaussian_at_sigma_10.png}
-				\caption{Gaussian with $\sigma = ?$}
+				\caption{Gaussian with $\sigma = 10.?$}
 				\label{subfig:gauss2}
 			\end{subfigure}
-		
+			
 			\vspace{0.3cm}
-		
+			
 			\begin{subfigure}[normla]{0.3\textwidth}
 				\includegraphics[width=4.5cm]{images/DoG_at_sigma_2.png}
-				\caption{DoG with $\sigma_1$=1.6, $\sigma_2$=2.0}
+				\caption{DoG with $\sigma_1$=1.6?, $\sigma_2$=2.0?}
 				\label{subfig:org}
 			\end{subfigure}
 			~
 			\begin{subfigure}[normla]{0.3\textwidth}
 				\includegraphics[width=4.5cm]{images/DoG_at_sigma_5.png}
-				\caption{DoG with $\sigma_1$=?, $\sigma_2$=?}
+				\caption{DoG with $\sigma_1$=4?, $\sigma_2$=6?}
 				\label{subfig:org}
 			\end{subfigure}
 			~
 			\begin{subfigure}[normla]{0.3\textwidth}		
 				\includegraphics[width=4.5cm]{images/DoG_at_sigma_13.png}
-				\caption{DoG with $\sigma_1$=?, $\sigma_2$=?}
+				\caption{DoG with $\sigma_1$=12?, $\sigma_2$=14?}
 				\label{subfig:org}
 			\end{subfigure}
-		\caption{This figure shows the impact of the Gaussian blur with different scales $\sigma$ on an image as well as the normalized difference of two neighboured Gaussian images.}
+			\caption{This figure shows the impact of the Gaussian blur with different scales $\sigma$ on an image as well as the normalized difference of two neighboured Gaussian images. 
+			[original image taken from https://upload.wikimedia.org/wikipedia/en/2/24/Lenna.png, Gaussian blur and DoG done by own algorithm]}
 		\end{center}
 	\end{figure}
+	
+	Lowe uses for his keypoint sampling approach a so-called scale-space representation of the given image. That means the image will be smoothed with different scales $\sigma$ of the Gaussian kernel. Smoothing an image with a low $\sigma$ value will suppress fine structures, whereas smoothing with a large $\sigma$ only leaves rough contours. The results of the Gaussian blurring can be seen in figure 1(b) and 1(c). That is exactly what we need in order to find distinctive features no matter how large or small they are depicted in the image. The resulting images stack-up to form a so-called Gaussian pyramid.
+	
+	Lowe has found that using an initial $\sigma = 1.6$ and gradually adjusting each ensuing scale of the Gaussian blur by a constant factor of $k = 2^{1/3}$ will achieve the best results [reference paper].
+	
+	After every three blurred images - which also means after each doubling of the $\sigma$ scale - the image can be downsampled by a factor of two. All images of the same size in the pyramid are considered to form an octave. The accuracy of sampling relative to $\sigma$ stays roughly the same for all octaves, but results in major computational performance boosts.
+	
+	Subtracting one Gaussian blurred image pixelwise from another gives us a Difference of Gaussians, short DoG. Doing this for every two neighbored images of the same octave in the Gaussians pyramid forms another pyramid of multiple Difference of Gaussians with one image less in each octave then before. In order to compensate for this lost image, we previously need to compute one more Gaussian blurred image at the end of each octave. Keep in mind that the resampling for the first image of the next octave should to be done on the same image as before.
+	
+	To finally retrieve the keypoints for our original image, each pixel of every Difference of Gaussian is compared to its eight pixel neighbors as well as its 18 neighbors from the DoGs laying directly above and below it in the pyramid [see figure 2.x].A pixel's location is taken into the set of our potential keypoints only if its value is either a minimum or a maximum in its surrounding neighborhood. Searching for extrema cannot be done on the first and last DoG image in each octave, since they have only one adjacent DoG of the same size, so they are omitted. Again, we need to generate two more Gaussians at the end of each octave, because it is favourable to extract extrema on three different sizes of $\sigma$ before moving on to the next octave.
+	
+	As mentioned before smoothing an image with different strengths results in images with different amount of detail. A minimum or maximum in scale-space means that a structure is still visible in one Gaussian image, but has been "smoothed away" by the stronger Gaussian kernel of the next. This leads to a large pixel value difference along the structure between these two Gaussians. A Difference of Gaussians has therefore a strong response to edges, as explicated in "Gaussian-based edge-detection methods-a survey" by M. Basu.
+	
+	If we look at two images depicting the same object, but one taken from further away, we will still find corresponding keypoints, but on different scales in the DoG pyramid. This emphasizes the scale invariance property of SIFT features.
 	
 	\subsection{Keypoint refinement}
 	
@@ -131,21 +129,19 @@
 		\begin{center}
 			\begin{subfigure}[normla]{0.3\textwidth}
 				\includegraphics[width=4.5cm]{images/straight_line.png}
-				\caption{Gaussian with $\sigma = ?$}
 				\label{subfig:gauss2}
 			\end{subfigure}
 			~
 			\begin{subfigure}[normla]{0.3\textwidth}
 				\includegraphics[width=4.5cm]{images/line_patch.png}
-				\caption{Original image}
 				\label{subfig:org}
 			\end{subfigure}
 			~
 			\begin{subfigure}[normla]{0.3\textwidth}
 				\includegraphics[width=4.5cm]{images/corner_patch.png}
-				\caption{Gaussian with $\sigma = 1.6$}
 				\label{subfig:gauss1}
 			\end{subfigure}	
+		\caption{The left image shows a straight line. The other two are upscaled patches taken from the left image. Even for a human, it would be impossible to tell from which exact location the patch in the middle originally came from. However, the patch on the right can easily be localized at the left end of the line.}
 		\end{center}
 	\end{figure}
 	
