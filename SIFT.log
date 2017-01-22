@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.9)  21 JAN 2017 16:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.1.22)  22 JAN 2017 19:53
 entering extended mode
 **./SIFT.tex
 (SIFT.tex
@@ -21,10 +21,10 @@ File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\a4wide\a4wide.sty"
+(C:\Users\Leo\AppData\Roaming\MiKTeX\2.9\tex\latex\a4wide\a4wide.sty
 Package: a4wide 1994/08/30
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\ntgclass\a4.sty"
+(C:\Users\Leo\AppData\Roaming\MiKTeX\2.9\tex\latex\ntgclass\a4.sty
 Package: a4 2004/04/15 v1.2g A4 based page layout
 ))
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
@@ -73,13 +73,13 @@ Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
 \epsfxsize=\dimen105
 \epsfysize=\dimen106
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
+(C:\Users\Leo\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\subcaption.sty
 Package: subcaption 2016/05/22 v1.1-161 Sub-captions (AR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+(C:\Users\Leo\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption.sty
 Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
-("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+(C:\Users\Leo\AppData\Roaming\MiKTeX\2.9\tex\latex\caption\caption3.sty
 Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
 Package caption3 Info: TeX engine: e-TeX on input line 67.
 \captionmargin=\dimen107
@@ -95,7 +95,7 @@ Package caption3 Info: TeX engine: e-TeX on input line 67.
 \c@subfigure=\count89
 \c@subtable=\count90
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\mathtools\mathtools.sty"
+(C:\Users\Leo\AppData\Roaming\MiKTeX\2.9\tex\latex\mathtools\mathtools.sty
 Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
@@ -111,7 +111,7 @@ LaTeX Info: Redefining \addtolength on input line 81.
 \calc@Ccount=\count93
 \calc@Cskip=\skip45
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\mathtools\mhsetup.sty"
+(C:\Users\Leo\AppData\Roaming\MiKTeX\2.9\tex\latex\mathtools\mhsetup.sty
 Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
@@ -185,7 +185,33 @@ LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
 \l_MT_below_intertext_sep=\dimen129
 \l_MT_above_shortintertext_sep=\dimen130
 \l_MT_below_shortintertext_sep=\dimen131
-) (SIFT.aux
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\english.sty"
+
+! Package babel Error: You are loading directly a language style.
+(babel)                This syntax is deprecated and you must use
+(babel)                \usepackage[language]{babel}.
+
+See the babel package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.75     \bblstyerror
+                     
+You could proceed but don't complain if you run into errors
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\babel-english\english.ldf"
+Language: english 2012/08/20 v3.3p English support from the babel system
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2016/04/23 3.9r Babel common definitions
+\babel@savecnt=\count107
+\U@D=\dimen132
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+)) (SIFT.aux
 
 LaTeX Warning: Label `subfig:org' multiply defined.
 
@@ -225,30 +251,30 @@ LaTeX Warning: Label `sub@subfig:gauss1' multiply defined.
 )
 \openout1 = `SIFT.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
-LaTeX Font Info:    ... okay on input line 11.
- ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+ (C:\Users\Leo\AppData\Roaming\MiKTeX\2.9\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count107
-\scratchdimen=\dimen132
+\scratchcounter=\count108
+\scratchdimen=\dimen133
 \scratchbox=\box28
-\nofMPsegments=\count108
-\nofMParguments=\count109
+\nofMPsegments=\count109
+\nofMParguments=\count110
 \everyMPshowfont=\toks22
-\MPscratchCnt=\count110
-\MPscratchDim=\dimen133
-\MPnumerator=\count111
-\makeMPintoPDFobject=\count112
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen134
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
 \everyMPtoPDFconversion=\toks23
 ) ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\pdftexcmds.sty"
 Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
@@ -297,126 +323,125 @@ G,.JBIG2,.JB2,.eps]
 )
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
+ [1
 
-<images/lenna.png, id=1, 385.44pt x 385.44pt>
+{C:/Users/Leo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+<images/lenna.png, id=11, 385.44pt x 385.44pt>
 File: images/lenna.png Graphic file (type png)
  <use images/lenna.png>
-Package pdftex.def Info: images/lenna.png used on input line 51.
+Package pdftex.def Info: images/lenna.png used on input line 55.
 (pdftex.def)             Requested size: 128.0374pt x 128.03662pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 51--52
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 55--56
 [][] 
  []
 
-<images/gaussian_at_sigma_3.png, id=2, 513.92pt x 513.92pt>
+<images/gaussian_at_sigma_3.png, id=12, 513.92pt x 513.92pt>
 File: images/gaussian_at_sigma_3.png Graphic file (type png)
 
 <use images/gaussian_at_sigma_3.png>
-Package pdftex.def Info: images/gaussian_at_sigma_3.png used on input line 57.
+Package pdftex.def Info: images/gaussian_at_sigma_3.png used on input line 61.
 (pdftex.def)             Requested size: 128.0374pt x 128.0327pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 57--58
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 61--62
 [][] 
  []
 
-<images/gaussian_at_sigma_10.png, id=3, 513.92pt x 513.92pt>
+<images/gaussian_at_sigma_10.png, id=13, 513.92pt x 513.92pt>
 File: images/gaussian_at_sigma_10.png Graphic file (type png)
 
 <use images/gaussian_at_sigma_10.png>
-Package pdftex.def Info: images/gaussian_at_sigma_10.png used on input line 63.
+Package pdftex.def Info: images/gaussian_at_sigma_10.png used on input line 67.
 
 (pdftex.def)             Requested size: 128.0374pt x 128.0327pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 63--64
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 67--68
 [][] 
  []
 
-<images/DoG_at_sigma_2.png, id=4, 513.92pt x 513.92pt>
+<images/DoG_at_sigma_2.png, id=14, 513.92pt x 513.92pt>
 File: images/DoG_at_sigma_2.png Graphic file (type png)
 
 <use images/DoG_at_sigma_2.png>
-Package pdftex.def Info: images/DoG_at_sigma_2.png used on input line 71.
+Package pdftex.def Info: images/DoG_at_sigma_2.png used on input line 75.
 (pdftex.def)             Requested size: 128.0374pt x 128.0327pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 71--72
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 75--76
 [][] 
  []
 
-<images/DoG_at_sigma_5.png, id=5, 513.92pt x 513.92pt>
+<images/DoG_at_sigma_5.png, id=15, 513.92pt x 513.92pt>
 File: images/DoG_at_sigma_5.png Graphic file (type png)
 
 <use images/DoG_at_sigma_5.png>
-Package pdftex.def Info: images/DoG_at_sigma_5.png used on input line 77.
+Package pdftex.def Info: images/DoG_at_sigma_5.png used on input line 81.
 (pdftex.def)             Requested size: 128.0374pt x 128.0327pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 77--78
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 81--82
 [][] 
  []
 
-<images/DoG_at_sigma_13.png, id=6, 513.92pt x 513.92pt>
+<images/DoG_at_sigma_13.png, id=16, 513.92pt x 513.92pt>
 File: images/DoG_at_sigma_13.png Graphic file (type png)
 
 <use images/DoG_at_sigma_13.png>
-Package pdftex.def Info: images/DoG_at_sigma_13.png used on input line 83.
+Package pdftex.def Info: images/DoG_at_sigma_13.png used on input line 87.
 (pdftex.def)             Requested size: 128.0374pt x 128.0327pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 83--84
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 87--88
 [][] 
  []
 
-[1
-
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2 <./images/lenna.png> <
-./images/gaussian_at_sigma_3.png (PNG copy)> <./images/gaussian_at_sigma_10.png
- (PNG copy)> <./images/DoG_at_sigma_2.png (PNG copy)> <./images/DoG_at_sigma_5.
-png (PNG copy)> <./images/DoG_at_sigma_13.png (PNG copy)>]
-<images/straight_line.png, id=26, 376.40625pt x 376.40625pt>
+[2 <./images/lenna.png> <./images/gaussian_at_sigma_3.png (PNG copy)> <./images
+/gaussian_at_sigma_10.png (PNG copy)> <./images/DoG_at_sigma_2.png (PNG copy)> 
+<./images/DoG_at_sigma_5.png (PNG copy)> <./images/DoG_at_sigma_13.png (PNG cop
+y)>] [3] <images/straight_line.png, id=30, 376.40625pt x 376.40625pt>
 File: images/straight_line.png Graphic file (type png)
 
 <use images/straight_line.png>
-Package pdftex.def Info: images/straight_line.png used on input line 131.
+Package pdftex.def Info: images/straight_line.png used on input line 144.
 (pdftex.def)             Requested size: 128.0374pt x 128.0396pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 131--133
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 144--146
 [][]
  []
 
-<images/line_patch.png, id=27, 37.64063pt x 37.64063pt>
+<images/line_patch.png, id=31, 37.64063pt x 37.64063pt>
 File: images/line_patch.png Graphic file (type png)
 
 <use images/line_patch.png>
-Package pdftex.def Info: images/line_patch.png used on input line 136.
+Package pdftex.def Info: images/line_patch.png used on input line 149.
 (pdftex.def)             Requested size: 128.0374pt x 128.0901pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 136--138
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 149--151
 [][]
  []
 
-<images/corner_patch.png, id=28, 37.64063pt x 37.64063pt>
+<images/corner_patch.png, id=32, 37.64063pt x 37.64063pt>
 File: images/corner_patch.png Graphic file (type png)
 
 <use images/corner_patch.png>
-Package pdftex.def Info: images/corner_patch.png used on input line 141.
+Package pdftex.def Info: images/corner_patch.png used on input line 154.
 (pdftex.def)             Requested size: 128.0374pt x 128.0901pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 141--143
+Overfull \hbox (0.66023pt too wide) in paragraph at lines 154--156
 [][]
  []
 
-[3] [4 <./images/straight_line.png> <./images/line_patch.png> <./images/corner_
-patch.png>] [5] (SIFT.aux)
+[4 <./images/straight_line.png> <./images/line_patch.png> <./images/corner_patc
+h.png>] [5] [6] (SIFT.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3921 strings out of 493333
- 60608 string characters out of 3139201
- 130726 words of memory out of 3000000
- 7393 multiletter control sequences out of 15000+200000
+ 4271 strings out of 493333
+ 65292 string characters out of 3139200
+ 139476 words of memory out of 3000000
+ 7733 multiletter control sequences out of 15000+200000
  10160 words of font info for 37 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,7n,40p,770b,522s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,7n,40p,771b,526s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTe
@@ -430,9 +455,9 @@ gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files
 /MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/
 type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on SIFT.pdf (5 pages, 1752037 bytes).
+Output written on SIFT.pdf (6 pages, 1756180 bytes).
 PDF statistics:
- 85 PDF objects out of 1000 (max. 8388607)
+ 88 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
