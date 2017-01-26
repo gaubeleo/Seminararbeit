@@ -1,0 +1,35 @@
+Hallo zusamen,
+ich stelle heute das Verfahren Scale-Invariant Feature Transform vor, dass 1999 von David Lowe von der University of British Columbia entwickelt wurde. 
+Ganz grob bevor ich zu meiner Gliederung komme: es ist ein Verfahren mit dem man besondere Merkmale von Objekten in Bildern finden kann. Das Ziel ist es, dass wenn man SIFT auf ein anderes Bild anwedet, dass aber die selben Objekte zeigt, dann soll man ähnliche Merkmale zu finden sein. 
+Nun zu meiner Gliederung:
+Am Anfang werde ich nochmal kurz erklären was SIFT eigentlich macht und wofür es benutzt werden kann.
+Danach werde ich versuchen den Algorithmus auf eine einfache Art und Weise zu erklären. Dabei lässt sich SIFT in 4 wichtige Grund-Schitte unterteilen, wobei ich aus zeit und verwirrungsgründen so manche einzelheiten weglassen werde/muss.
+nähmlich einmal, wie man mögliche markante Punkte mit Hilfe von Extrema im Skalenraums finden kann. Insbesondere gehe ich natürlich darauf ein wie sich so ein Skalenraum aufbaut.
+Danach werden wir versuchen diese Extrempunkte noch zu verbessern, indem wir erstens deren Position noch genauer bestimmen (keypoint refinement) und zweitens verwerfen wir Punkte die uns zu wenig Informationen geben (Keypoint filtering)
+Da dieser Algorithmus auch gedrehte Objekte wiedererkennen soll, wird jedem Merkmal eine Orientierung zugewiesen
+Damit man zwei Merkmale auch vergleichen kann, müssen wir zu jedem markanten Punkt einen Feature descriptor berechnen, der dieses Merkmal im Bild auch beschreibt. 
+Soviel zum Algorithmus, am Ende gehe ich noch kurz auf problematische Situationen ein, in denen SIFT möglicherweise nicht so gut funktioniert.
+Wenn es während dem Vortrag irgendwelche Fragen gibt, dann dürfen Sie mich gerne auch jederzeit unterbrechen oder einfach am Ende stellen.
+
+SIFT ist ein Verfahren mit dem man markante Punkte in Bildern finden kann, wie man auf diesen beiden Bildern gut sieht. 
+Ziel ist es möglichst viele gleiche Punkte wiederzufinden. Manche Punkte tauchen hier nur im linken Bild auf, andere nur im rechten. aber das macht nichts, denn wir brauchen nur ein paar Übereinstimmungen damit die SIFT punkte ihren Zweck erfüllen. 
+Da fragt man sich natürlich: Was ist überhaupt der Zweck solche markanten Punkte zu berechen? 
+SIFT bietet eine gute Grundlage für Bildbearbeitungsprogramme aber ermöglicht auch Maschinelles sehen (wie schon der Name dieses Seminars verrät)!
+SIFT features kann man dafür benutzen Objekte in Bildern zu erkennen, (oder auch in Videos zur verfolgung von Objekten). 
+Angenommen wir haben eine Große Datenbank in der SIFT Features von einzelnen (Früchten) gespeichert sind. Dann können wir auch einfach die SIFT-Feature dieses Bildes hier berechnen und versuchen jedem Feature das ähnlichste Feature unserer Datenbank zuzuweisen. Mit Hilfe von mehreren richtigen Übereinstimmungen können wir nicht nur sagen was für objekte sich in der Scene unseres Bildes befinden, sodern wir könne auch deren ungefähre geometrische position berechnen. 
+Es gibt viele andere Anwendungsmöglichkeiten von SIFT aber auf ein weiteres Beispiel würde ich gerne noch genauer eingehen: nämlich zum zusammenfügen mehrerer Fotos, sodass am ende ein großes Panoramabild herrauskommt. 
+Damit das ganze funktioniert müssen sich die Scenen natürlich teilweise überlappen. Man rechnet wieder alle SIFT feature aus und nachdem man gleiche Paarungen zuordnen konnte kann man die einzelnen bilder so transformieren, dass sich am ende ein großes Panoramabild ergibt und man kaum sagen kann, dass es aus vielen unterschiedlichen bildern aufgenommen wurde.
+
+Soviel zu möglichen Anwendungen von SIFT. Nun zum eigentlichen Algorithmus:
+
+Nicht jede position in einem Bild eignet sich dazu ein SIFT-feature darauf zu berechnen, denn wir wollen nur punkte haben, die zu einer hohen wahrscheinlichkeit in einem anderen Bild mit der gleichen szene auch wieder auftauschen. Dafür eigenen sich am besten punkte die sich stark von ihrer umgebung absetzen, also kanten, ecken, aber auch göbere strukturen wie z.B ein Auge oder eine Nase.
+Um solche markante Punkte zu berechnen wird bei SIFT ein sogenannter Skalenraum des bildes aufgebaut und dort wird nach extremstellen gesucht.
+Unser Beispielsbild zeigt die wunderschöne Lena.
+Um jetzt den Skalenraum zu erhalten müssen wir erst einmal unser ausgangsbild unterschiedlich stark mit dem gauss-filter glätten. Das ergebnis dieser gausglättungen schaut dann ungefähr so aus... Wie man schön sieht, gehen als erstes bei geringem glätten feine kanten verloren und irgendwann bleiben nurnoch grobe strukturen bishin dass man dass man garnichtmehr erkennt dass das ursprungsbild mal einen kopf gezeigt hat. 
+Wenn man nun ein geglättetes bild von einem anderen weniger stark geglättetem bild abzieht (pixelweise), so erhält man ein neues Bild das nur noch deren Unterschiede aufzeigt. Zur veranschaulichung habe ich das rechte resultierende bild so normalisiert, dass kein Unterschied in den Gaussbildern durch ein graues pixel ausgedrückt wird und weiße und schwarze pixel zeigen eben den unterschiede. 
+Was einem eigentlich als erstes auffällt ist, dass in dem neuen bild besonders stark Kanten hervorgehoben werden
+
+
+Der Name "Scale-Invariant Feature Transform" weist schon darauf hin, dass die Feature, diese Merkmale, die wir berechnen invariant zur Größen der Objekte seinen soll.
+Das ist auch tatsächlich der Fall, denn wenn wir uns hier diese 2 Bilder anschauen, dann bekommen wir zwar unterschiedliche Merkmalspunkte auf den gleichen Ebenen im Skalenraum, allerdings relativ zu ihrer Größe finden wir ähnliche Punkte. 
+
