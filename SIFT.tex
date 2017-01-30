@@ -18,30 +18,30 @@
 	
 	\begin{abstract} 
 		%(...Computers no longer only understand their own world of numbers and maths. Nowadays some computer algorithms %are good enough to cope with our human world accurately detect, track and recognize objects in still or moving %images. ) 
-		The following paper is supposed to give an overview of how the Scale Invariant Feature Transform, short SIFT, works. It was introduced by David G. Lowe in 1999 and enhanced multiple times until he published his final version in 2004. This algorithm extracts distinctive features from images which can be used for matching objects across multiple images.  
+		The following paper is supposed to give an overview of how the Scale Invariant Feature Transform (SIFT) works. It was introduced by David G. Lowe in 1999 and enhanced multiple times until he published his final version in 2004. This algorithm extracts distinctive features from images which can for example be used for matching objects across multiple images.  
 		
-		The first part of this paper introduces the basic concept of SIFT and also presents a range of possible applications. Subsequently, every essential step that leads to the creation of SIFT features is being explained in detail. In contrast to all the advantages of using SIFT, some of its disadvantages are being examined in the third section. Finally, it concludes with a brief summary of the entire paper. 
+		The first part of this paper introduces the basic concepts of SIFT and also presents a range of possible applications. Subsequently, every essential step that leads to the creation of SIFT features is being explained in detail. In contrast to all the advantages of using SIFT, some of its disadvantages are being examined in the third section. Finally, it concludes with a brief summary of the entire paper. 
 	\end{abstract} 
 
 	\section{Introduction} 
 	\subsection{Motivation and Usage} 
 	
-	The main goal of the Scale Invariant Feature Transform is finding distinct points in an image which are likely to appear in a different image, depicting the same object(s). These distinct points are called keypoints and are being used to compute a feature descriptor which describe the local neighbourhood around that keypoint's location.  
+	The main goal of the Scale Invariant Feature Transform is finding distinct points in an image which are likely to appear in a different image, depicting the same object(s). These distinct points are called keypoints and are being used to compute a feature descriptor which describes the local neighbourhood around that keypoint's location.  
 	
-	The idea behind such a feature-based algorithm is to find many corresponding keypoints across multiple images and trying to match them using similarities in their feature descriptors. Even a small amount of correct matches can be extremely useful in a range of computer vision tasks: 
+	The idea behind such a ..feature-based algorithm.. is to find many corresponding keypoints across multiple images and trying to match them using similarities in their feature descriptors. Even a small amount of correct matches can be extremely useful in a range of computer vision tasks: 
 	
-	Lowe proposed a way of how scale-invariant features can be used to recognize objects even under difficult conditions. A Hough transformation helps to detect objects even if they are partially occluded. Furthermore, SIFT can also be used for tracking objects in videos. 
+	Lowe proposed a way of how scale-invariant features can be used to recognize objects even if they are partially occluded. Furthermore, SIFT can also be used for tracking objects in videos. 
 	
-	It is also possible to use SIFT for recognizing human gestures, which serves to control applications or even tell robots what to do. 
+	It is also possible to use SIFT for recognizing human gestures [reference], which serves to control applications or even tell robots what to do. 
 	
 	In 2007 Lowe collaborated with Matthew Brown and together they published a paper on how to use correspondences of these invariant features to stitch partially overlapping images together, resulting in a single panoramic image. [reference: Automatic Panoramic Image Stitching using Invariant Features] 
 	
 	\section{Extracting SIFT Features}  
 	\subsection{Selecting keypoints from scale-space extrema} 
 	
-	The first step of the SIFT algorithm is to select potential keypoints. It would be a bad idea for an image feature-based algorithm to consider every possible pixel location, because computation for a single image would take a long time and most features would be unusable for accurate localization due to lack of image information.  
+	The first step of the SIFT algorithm is to select potential keypoints. It would be ..a bad idea for an image feature-based algorithm.. to consider every possible pixel location, because computation for a single image would take a long time and most features would be unusable for accurate localization due to lack of image information.  
 	
-	This is why we have to choose keypoints based on its recognition value. Therefore, we only want to select keypoints that are highly likely to be found in a different image showing the same scene. This means a good keypoint should be invariant to numerous transformations such as rotation, scale, distortion and brightness, but also to change in illumination, 3D viewpoint and addition of noise. Of course, it would be hard to satisfy all these properties, but the Scale Invariant Feature Transform satisfies most of them which will be further examined in this paper. 
+	This is why we have to choose keypoints based on its recognition value. Therefore, we only want to select keypoints that are highly likely to be found in a different image showing the same scene. This means a good keypoint should be invariant to numerous transformations such as rotation, scale, distortion and brightness, but also to change in illumination, 3D viewpoint and addition of noise. Of course, it is hard to satisfy all these properties, but the Scale Invariant Feature Transform satisfies most of them which will be further examined in this paper. 
 	
 	\begin{figure}[t]
 		\begin{center} 
@@ -87,17 +87,33 @@
 		\end{center} 
 	\end{figure} 
 
-	In order to select keypoints from an image, Lowe uses a so-called scale-space representation of that image. This means the image will be smoothed with different scales $\sigma$ of the Gaussian kernel. Smoothing an image with a low $\sigma$ value will suppress fine structures, whereas smoothing with a large $\sigma$ only leaves rough contours. The results of the Gaussian blurring can be seen in the top row of Figure 1. The resulting images stack-up to form a so-called Gaussian pyramid. 
+	In order to select keypoints from an image, Lowe uses a so-called scale-space representation of that image. To construct this scale-space, we first have to create multiple smoothed variations of our original image. We can smooth an image by convolving it with a 2D-Gaussian function $G(x, y, \sigma)$, where x and y are convolution directions and $\sigma$ is the standard deviation:
 	
-	Lowe has found that using an initial $\sigma = 1.6$ and gradually adjusting each ensuing scale of the Gaussian blur by a constant factor of $k = 2^{1/3}$ will achieve the best results [reference paper]. 
+	$$
+	G(x, y, \sigma) = \frac{1}{2 \pi \sigma^2} e^{-(x^2+y^2)/2\sigma^2}	
+	$$
 	
-	After every three blurred images - which also means after each doubling of the $\sigma$ scale - the image can be down-sampled by a factor of two. All images of the same size in the pyramid are considered to form an octave. The accuracy of sampling relative to $\sigma$ stays roughly the same for all octaves, but down-sampling the image results in major computational performance boosts. 
+	The Gaussian blur is a low-pass filter that will suppress high frequencies which correspond to fine structures in the input image. The strenth of the blur is given by the standard deviation $\sigma$. The results of the Gaussian blurring can be seen in the top row of Figure 1. The resulting images stack-up to form a so-called Gaussian pyramid. 
 	
-	Subtracting one Gaussian blurred image pixelwise from another gives us a Difference of Gaussians, short DoG. Doing this for every two neighbored images of the same octave in the Gaussians pyramid forms another pyramid of multiple Difference of Gaussians with one image less in each octave then before. In order to compensate for this lost image, we previously need to compute one more Gaussian blurred image at the end of each octave. Keep in mind that the resampling for the first image of the next octave should to be done on the same image as before. 
+	Lowe has found that using an initial scale $\sigma = 1.6$ and gradually adjusting each following scale of the Gaussian blur by a constant factor of $k = 2^{1/3}$ will achieve the best results [reference paper]. 
+	
+	After every three blurred images - which also means after each doubling of the $\sigma$ scale - the image can be down-sampled by a factor of two. All images of the same size in the pyramid are called an octave. The accuracy of sampling relative to $\sigma$ stays roughly the same for all octaves, but down-sampling the image results in major computational performance boosts. 
+	
+	If we take the difference between two Gaussian functions at different scales and convolve it with the original image, we obtain our scale-space function $D(x, y, \sigma)$:
+	
+	 \begin{eqnarray}
+	D(x, y, \sigma) &=& (G(x, y, k\sigma) - G(x, y, \sigma)) \ast I(x, y) \\
+	&=& (G(x, y, k\sigma) \ast I(x, y)) - (G(x, y, \sigma) \ast I(x, y))
+	\end{eqnarray}
+	
+	The $\ast$ symbol is the convolution operator and due to its distributivity, we can also just subtract one Gaussian-blurred image pixelwise from another (2), giving us a Difference of Gaussians image (DOG). Doing this for every two neighboring images of the same octave in the Gaussian pyramid forms another pyramid of multiple Difference of Gaussians with one image less in each octave then before. In order to compensate for this lost image, we previously need to compute one more Gaussian blurred image at the end of each octave.
+	
+	
+	%Keep in mind that the resampling for the first image of the next octave should to be done on the same image as before. 
 	
 	To finally retrieve the keypoints for our original image, each pixel of every Difference of Gaussian is compared to its eight pixel neighbors as well as its 18 neighbors from the DoGs lying directly above and below it in the pyramid (see Figure 2(b)). A pixel's location is taken into the set of our potential keypoints only if its value is either a minimum or a maximum in its surrounding neighborhood. Searching for extrema cannot be done on the first and last DoG image in each octave, since they only have one adjacent DoG of the same size, so they are omitted. Again, we need to generate two more Gaussians at the end of each octave, because it is favourable to extract extrema on three different sizes of $\sigma$ before moving on to the next octave. 
 	
-	As mentioned before smoothing an image with different strengths results in images with different amount of detail. This is exactly what we need in order to find distinctive features no matter how large or small they are depicted in the picture. A minimum or maximum in scale-space means that a structure is still visible in one Gaussian image, but has been "smoothed away" by the stronger Gaussian kernel of the next. This leads to a large pixel value difference along the structure between these two Gaussians. A Difference of Gaussians has therefore a strong response to edges, as explicated in "Gaussian-based edge-detection methods-a survey" by M. Basu[reference]. 
+	As mentioned before, smoothing an image with different strengths results in images with different amount of detail. This is exactly what we need in order to find distinctive features no matter how large or small they are depicted in the picture. A minimum or maximum in scale-space means that a structure is still visible in one Gaussian image, but has been "smoothed away" by the stronger Gaussian kernel of the next. This leads to a large pixel value difference along the structure between these two Gaussians. A Difference of Gaussians has therefore a strong response to edges, as explicated in "Gaussian-based edge-detection methods-a survey" by M. Basu[reference]. 
 	
 	If we look at two images depicting the same object, but one taken from further away, we will still find corresponding keypoints, but on different scales in the DoG pyramid. This emphasizes the scale invariance property of SIFT features. 
 	
@@ -115,7 +131,7 @@
 				\label{subfig:scale_space_extrema} 
 			\end{subfigure} 
 			 
-			\caption{This figure shows the basic concept of finding scale-space extrema. Differently strong Gaussian blurred images are depicted on the left side of (a). They are grouped by size, where each group forms an octave. Subtracting every two neighboured Gaussians results in a Difference of Gaussian (DoG) pyramid, shown in (a) on the right. 
+			\caption{This figure shows the basic concept of finding scale-space extrema. Gaussian-blurred images with increasing standard deviation (from bottom to top) are depicted on the left side of (a). They are grouped by size, where each group forms an octave. Subtracting every two neighboured Gaussians results in a Difference of Gaussian (DoG) pyramid, shown in (a) on the right. 
 			In (b) an "X"-marked pixel in one of these DoGs in being compared to its 26 neighbours, including those lying in adjacent DoGs. Only if that pixel holds the highest or lowest value of its surroundings it is considered to be a scale-space maximum or minimum, respectively.} 
 		\end{center} 
 	\end{figure} 
@@ -123,15 +139,20 @@
 	
 	\subsection{Keypoint refinement} 
 	
-	Our next step in the SIFT algorithm is to predict the accurate location and scale of our previously selected keypoints on a subpixel precision level. It is done by fitting a 3D quadratic function to the sample points that we have chosen from the scale-space extrema. 
+	Our next step in the SIFT algorithm is to predict the precise location and scale of our previously extracted scale-space extrema. As an illustration example every image in DoG pyramid can also be represented as a 3D surface with pixel intensity values determining the expansion in the "z"-direction and interpolated values in between pixels as shown in Figure 3. We can improve our keypoints on a sub-pixel precision level by determining the exact locations of the peaks DoG surfaces.
 	
-	...
+	For every keypoint, that we obtained in the previous section, we select its corresponding Difference of Gaussian function, $D(x, y \sigma)$, shift it by the keypoints position $\vec{x} = (x, y, \sigma)^T$ and use a Taylor series up to the quadratic terms to approximate the values in between pixels.
+	
+	%$$
+	%D(\vec{x}) = D + \frac{\partial D^T}{\partial\vec{x}} \vec{x} + \frac{1}{2}\vec{x}^T \\
+	%\frac{\partial^2D}{\partial\vec{x}^2}\vec{x}
+	%$$
 	 
 	\subsection{Keypoint filtering} 
 	
-	Some of the keypoints we obtained earlier might not serve for good features due to a lack of contrast or unstable localization along an edge, so we need to reject such keypoints.
+	Some of the keypoints we obtained earlier might not be suitable for feature extraction due to a lack of contrast or unstable localization along an edge, so we need to reject such keypoints.
 	  
-	A low contrast also means that we might not find corresponding feature in an image that has slightly been modified from the original. Contrast can easily be measured by the Tayler expansion of the scale space function shifted by the precise location $\hat x$ of the extremum: 
+	A low contrast also means that we might not find corresponding features in an image that has slightly been modified from the original. Contrast can easily be measured by the Taylor expansion of the scale space function shifted by the precise location $\hat x$ of the extremum: 
 	
 	$$ 
 	D(\hat x) = D + \frac{1} {2} \frac{\partial D^T} {\partial x} \hat x 
@@ -143,7 +164,7 @@
 	
 	To further illustrate this problem, we can simply look at an arbitrary thick white line on black background as shown in Figure 3(a). If we were to cut a patch from the middle section of the line (see Figure 3(b)), it would be impossible to tell at which exact location on the line the patch originated from. A patch of one of the end sections, as shown in 3(c), can easily be matched to its correct location at the corresponding end of the line. 
 	
-	In order to mathematically determine whether a given keypoint is corner-like and therefore stable or not, we can use a 2x2 Hessian matrix $H$, where $D_{xx}$, $D_{xy}$, $D_{yx}$ and $D_{yy}$ are approximated derivatives using neighbouring sample points at the keypoints location and scale: 
+	In order to mathematically determine whether a given keypoint is corner-like and therefore stable or not, we can use a 2x2 Hessian matrix $H$, where $D_{xx}$, $D_{xy}$, $D_{yx}$ and $D_{yy}$ are approximated derivatives of the ..DoG.. using neighbouring sample points at the keypoints location and scale: 
 	
 	$$ 
 	H = \begin{bmatrix} 
@@ -152,7 +173,7 @@
 	\end{bmatrix} 
 	$$ 
 	
-	Given $H$, we can look at the ratio of its two eigenvalues. Basically speaking, if both eigenvalues are of the same magnitude, then we are dealing with a keypoint which shows a strong curvature. However, if one eigenvalue is significantly bigger than the other, we will discard this keypoint from our set, because it is unusable for our purposes due to its similarity to an edge. 
+	Given $H$, we can look at the ratio of its two eigenvalues. If both eigenvalues are of the same magnitude, then we are dealing with a keypoint which shows a strong curvature. However, if one eigenvalue is significantly bigger than the other, we will discard this keypoint from our set, because it is unusable for our purposes due to its similarity to an edge. 
 	
 	
 	\begin{figure}[h]
