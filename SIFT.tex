@@ -99,14 +99,14 @@
 	
 	After every three blurred images - which also means after each doubling of the $\sigma$ scale - the image can be down-sampled by a factor of two. All images of the same size in the pyramid are called an octave. The accuracy of sampling relative to $\sigma$ stays roughly the same for all octaves, but down-sampling the image results in major computational performance boosts. 
 	
-	If we take the difference between two Gaussian functions at different scales and convolve it with the original image, we obtain our scale-space function $D(x, y, \sigma)$:
+	If we take the difference between two Gaussian functions at different scales and convolve it with the original image, $I(x, y)$, we obtain the scale-space function $D(x, y, \sigma)$:
 	
-	 \begin{eqnarray}
+	\begin{eqnarray}
 	D(x, y, \sigma) &=& (G(x, y, k\sigma) - G(x, y, \sigma)) \ast I(x, y) \\
 	&=& (G(x, y, k\sigma) \ast I(x, y)) - (G(x, y, \sigma) \ast I(x, y))
 	\end{eqnarray}
 	
-	The $\ast$ symbol is the convolution operator and due to its distributivity, we can also just subtract one Gaussian-blurred image pixelwise from another (2), giving us a Difference of Gaussians image (DOG). Doing this for every two neighboring images of the same octave in the Gaussian pyramid forms another pyramid of multiple Difference of Gaussians with one image less in each octave then before. In order to compensate for this lost image, we previously need to compute one more Gaussian blurred image at the end of each octave.
+	The $\ast$ symbol is the convolution operator and due to its distributivity, we can also just subtract one Gaussian-blurred image pixelwise from another (2). The new image is called Difference of Gaussians (DOG). Doing this for every two neighboring images of the same octave in the Gaussian pyramid forms another pyramid of multiple Difference of Gaussians with one image less in each octave then before. In order to compensate for this lost image, we previously need to compute one more Gaussian blurred image at the end of each octave.
 	
 	
 	%Keep in mind that the resampling for the first image of the next octave should to be done on the same image as before. 
@@ -141,12 +141,14 @@
 	
 	Our next step in the SIFT algorithm is to predict the precise location and scale of our previously extracted scale-space extrema. As an illustration example every image in DoG pyramid can also be represented as a 3D surface with pixel intensity values determining the expansion in the "z"-direction and interpolated values in between pixels as shown in Figure 3. We can improve our keypoints on a sub-pixel precision level by determining the exact locations of the peaks DoG surfaces.
 	
-	For every keypoint, that we obtained in the previous section, we select its corresponding Difference of Gaussian function, $D(x, y \sigma)$, shift it by the keypoints position $\vec{x} = (x, y, \sigma)^T$ and use a Taylor series up to the quadratic terms to approximate the values in between pixels.
+	Let $\vec{x} = (x, y, \sigma)^T$ be the location and scale of a keypoint that we obtained in the previous section. For every such keypoint, we calculate a Taylor series expansion up to the quadratic terms of the scale-space function, $D(x, y \sigma)$, shifted by $\vec{x}$, so that the origin is at the keypoint's position.
 	
-	%$$
-	%D(\vec{x}) = D + \frac{\partial D^T}{\partial\vec{x}} \vec{x} + \frac{1}{2}\vec{x}^T \\
-	%\frac{\partial^2D}{\partial\vec{x}^2}\vec{x}
-	%$$
+	$$
+	D(\vec{x}) = D + \frac{\partial D^T}{\partial\vec{x}} \vec{x} + \frac{1}{2}\vec{x}^T \\
+	\frac{\partial^2D}{\partial\vec{x}^2}\vec{x}
+	$$
+	
+	By calculating its derivative and setting it to zero, we receive another vector $\vec{o}$, which consist of the location and scale offset to our initial keypoint position $\vec{x}$.
 	 
 	\subsection{Keypoint filtering} 
 	
