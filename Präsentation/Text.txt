@@ -1,9 +1,10 @@
 Hallo zusamen,
 ich stelle heute das Verfahren Scale-Invariant Feature Transform vor, dass 1999 von David Lowe von der University of British Columbia entwickelt wurde. 
-Ganz grob bevor ich zu meiner Gliederung komme: es ist ein Verfahren mit dem man besondere Merkmale von Objekten in Bildern finden kann. Das Ziel ist es, dass wenn man SIFT auf ein anderes Bild anwedet, dass aber die selben Objekte zeigt, dann soll man ähnliche Merkmale zu finden sein. 
+Ganz grob bevor ich zu meiner Gliederung komme: es ist ein Verfahren mit dem man versucht markante Punkte in Bildern finden kann. und an diesen markanten punkten wird ein Feature, als ein Merkmal, berechnet, die diesen Punkt beschreiben soll (so invariant wie möglich?). Das Ziel ist es, dass wenn man SIFT auf ein anderes Bild anwedet, dass aber ungefähr die gleiche Szene zeigt, dann soll man ähnliche Merkmale zu finden sein, die zu den gleichen Punkten im Bild gehören!
 Nun zu meiner Gliederung:
 Am Anfang werde ich nochmal kurz erklären was SIFT eigentlich macht und wofür es benutzt werden kann.
-Danach werde ich versuchen den Algorithmus auf eine einfache Art und Weise zu erklären. Dabei lässt sich SIFT in 4 wichtige Grund-Schitte unterteilen, wobei ich aus zeit und verwirrungsgründen so manche einzelheiten weglassen werde/muss.
+
+Ich habe meine Präsentation so aufgebaut, dass ich Ihnen anhand von Bildern den SIFT algorithmus schrittweise auf eine einfache Art und Weise erklären kann. Dabei lässt sich SIFT in 4 wichtige Grund-Schitte unterteilen, wobei ich aus zeit und verwirrungsgründen so manche einzelheiten weglassen werde/muss.
 nähmlich einmal, wie man mögliche markante Punkte mit Hilfe von Extrema im Skalenraums finden kann. Insbesondere gehe ich natürlich darauf ein wie sich so ein Skalenraum aufbaut.
 Danach werden wir versuchen diese Extrempunkte noch zu verbessern, indem wir erstens deren Position noch genauer bestimmen (keypoint refinement) und zweitens verwerfen wir Punkte die uns zu wenig Informationen geben (Keypoint filtering)
 Da dieser Algorithmus auch gedrehte Objekte wiedererkennen soll, wird jedem Merkmal eine Orientierung zugewiesen
@@ -13,7 +14,6 @@ Wenn es während dem Vortrag irgendwelche Fragen gibt, dann dürfen Sie mich ger
 
 SIFT ist ein Verfahren mit dem man markante Punkte in Bildern finden kann, wie man auf diesen beiden Bildern gut sieht. 
 Ziel ist es möglichst viele gleiche Punkte wiederzufinden. Manche Punkte tauchen hier nur im linken Bild auf, andere nur im rechten. aber das macht nichts, denn wir brauchen nur ein paar Übereinstimmungen damit die SIFT punkte ihren Zweck erfüllen. 
-Da fragt man sich natürlich: Was ist überhaupt der Zweck solche markanten Punkte zu berechen? 
 SIFT bietet eine gute Grundlage für Bildbearbeitungsprogramme aber ermöglicht auch Maschinelles sehen (wie schon der Name dieses Seminars verrät)!
 SIFT features kann man dafür benutzen Objekte in Bildern zu erkennen, (oder auch in Videos zur verfolgung von Objekten). 
 Angenommen wir haben eine Große Datenbank in der SIFT Features von einzelnen (Früchten) gespeichert sind. Dann können wir auch einfach die SIFT-Feature dieses Bildes hier berechnen und versuchen jedem Feature das ähnlichste Feature unserer Datenbank zuzuweisen. Mit Hilfe von mehreren richtigen Übereinstimmungen können wir nicht nur sagen was für objekte sich in der Scene unseres Bildes befinden, sodern wir könne auch deren ungefähre geometrische position berechnen. 
@@ -33,3 +33,29 @@ Was einem eigentlich als erstes auffällt ist, dass in dem neuen bild besonders 
 Der Name "Scale-Invariant Feature Transform" weist schon darauf hin, dass die Feature, diese Merkmale, die wir berechnen invariant zur Größen der Objekte seinen soll.
 Das ist auch tatsächlich der Fall, denn wenn wir uns hier diese 2 Bilder anschauen, dann bekommen wir zwar unterschiedliche Merkmalspunkte auf den gleichen Ebenen im Skalenraum, allerdings relativ zu ihrer Größe finden wir ähnliche Punkte. 
 
+
+
+d.h Flächen die einen ähnlichen Pixelwert haben, werden durch das glätten wenig beeinflusst. Allerdings werden die Kanten eines Objekts stark beeinflusst, da diese sozusagen verwischt werden. 
+Wir glätten unser Bild natürlich nicht nur ein oder zweimal, sondern versuchen eine ganze Reihe an unterschidlich stark geglätteten Bildern aufzubauen.
+Wenn man nun 2 von diesen geglätteten Bildern nimmt und voneinander pixelweise abzieht, dann erhält man ein neues Bild nähmlich ein sogenanntes difference of gaussians bild, da es ja einfach der unterschied zwischen zwei gaussbildern ist.
+
+die Größe unserer Punkte die wir im Skalenraum finden ist proportional zur Stärke unseres Gaussfilters. Das Heißt, wenn wir ein extrempunkt im Skalenraum finden und das differnece-of-gaussians Bild in dem wir diesen extrempunkt gefunden haben ist, ist ursprünglich durch starke glättung entstanden, dann bekommen wir auch einen großen "keypoint" der auch eine große struktur beschreibt. wohingegen...
+
+
+
+Aussortieren unbrauchbarer Punkte:
+Nachdem wir die ganzen Extrempunkte im Skalenraum gefunden haben können wir uns die natürlich auch einmal anzeigen lassen. Auf dem Bild vom Perlachturm von vorhin sieht das ganze ungefähr so aus. Nun ja das ist natürlich noch nicht was wir haben wollen, denn wie man sieht gibt es sehr viele Punkte im blauen Himmel und wir können nun wirklich nicht hoffen irgendeinen dieser Punkte in einem anderen Bild wiederzufinden, da der Extrempunkt im Skalenraum wahrscheinlich nur durch Bildrauschen entstanden ist! Das heißt wir müssen Punkte herrausschmeißen, die uns einfach nicht genug Struktur bzw. Bildinformationen liefern. Deshalb Wählen wir uns einen Schwellwert berechnen den Kontrast (WIE?!) um jeden einzelnen Keypoint und wenn der Kontrast unter diesem schwellwert liegt, dann verwerfen wir den Keypoint. 
+
+Wenn wir unser Bild noch ein wenig genauer betrachten dann fällt auch auf, dass wir viele Keypoints an geraden Kanten bekommen. Diese kante in einem anderen Bild wieder zu finden sollte also weniger problematisch sein, aber wenn wir versuchen sollten jeden einzelnen Keypoint seine genaue Position auf der kante zuzuweisen dann bekommen wir möglicherweise ein problem, weil all diese Punkte schauen einfach gleich aus.
+Deshalb wollen wir nur Punkte benutzen, die wir auch klar auf einer Kante lokalisieren können 
+
+
+Orientierungs Zuweisung:
+
+Das Ende des SIFT algorithmus besteht darin für jeden Keypoint den wir zuvor bestimmt haben einen sogenannten Feature Deskriptor zu berechnen. Dieser Descriptor soll die Umgebung seines Keypoints so beschreiben, dass er möglichst invariant bezüglich Größenänderung und Rotation ist. Damit dies 
+
+
+
+
+
+Die standardabweichung ist ein Maß dafür wie weit die Werte sich um den Mittelwert streuen. In unserem Fall heißt das soviel wie stark wir das Bild Glätten und damit Ändern
