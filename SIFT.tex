@@ -12,15 +12,15 @@
 
 
 \begin{document} 
-	\title{The Scale Invariant Feature Transform}  
+	\title{The Scale Invariant Feature Transform} 
 	\author{Leopold Gaube} 
-	\date{15.01.2017}  
+	\date{15.01.2017} 
 	\maketitle 
 	
 	\begin{abstract} 
 		%(...Computers no longer only understand their own world of numbers and maths. Nowadays some computer algorithms %are good enough to cope with our human world accurately detect, track and recognize objects in still or moving %images. ) 
-		The following paper is supposed to give an overview of how the Scale Invariant Feature Transform (SIFT) works. It was introduced by David G. Lowe in 1999 and enhanced multiple times until he published his final version in 2004 \cite{SIFT}. This algorithm extracts distinctive features from images which can for example be used for matching objects across multiple images.  
-		
+		The following paper is supposed to give an overview of how the Scale Invariant Feature Transform (SIFT) works. It was introduced by David G. Lowe in 1999 and enhanced multiple times until he published his final version in 2004 \cite{SIFT}. This algorithm extracts distinctive features from images which can for example be used for matching objects across multiple images.
+		 
 		The first part of this paper introduces the basic concepts of SIFT and also presents a range of possible applications. Subsequently, every essential step that leads to the creation of these features is being explained in detail. In contrast to all the advantages of using SIFT, some of its disadvantages are being examined in the third section. [Finally, it concludes with a brief summary of the entire paper. ]
 		
 	\end{abstract} 
@@ -28,7 +28,7 @@
 	\section{Introduction} 
 	\subsection{Motivation and Usage} 
 	
-	The main goal of the Scale Invariant Feature Transform is finding distinct points in an image which are likely to appear in a different image, depicting the same object(s). These distinct points are called keypoints and are being used to compute a feature descriptor which describes the local neighbourhood around that keypoint's location.  
+	The main goal of the Scale Invariant Feature Transform is finding distinct points in an image which are likely to appear in a different image, depicting the same object(s). These distinct points are called keypoints and are being used to compute a feature descriptor which describes the local neighbourhood around that keypoint's location. 
 	
 	The idea behind such a ..feature-based algorithm.. is to find many corresponding keypoints across multiple images and trying to match them using similarities in their feature descriptors. Even a small amount of correct matches can be extremely useful in a range of computer vision tasks: 
 	
@@ -38,10 +38,10 @@
 	
 	In 2007 Lowe collaborated with Matthew Brown and together they published a paper on how to use correspondences of these invariant features to stitch partially overlapping images together, resulting in a single panoramic image \cite{panorama}. 
 	
-	\section{Extracting SIFT Features}  
+	\section{Extracting SIFT Features} 
 	\subsection{Selecting keypoints from scale-space extrema} 
 	
-	The first step of the SIFT algorithm is to select potential keypoints. It would be ..a bad idea for an image feature-based algorithm.. to consider every possible pixel location, because computation for a single image would take a long time and most features would be unusable for accurate localization due to lack of image information.  
+	The first step of the SIFT algorithm is to select potential keypoints. It would be ..a bad idea for an image feature-based algorithm.. to consider every possible pixel location, because computation for a single image would take a long time and most features would be unusable for accurate localization due to lack of image information. 
 	
 	This is why we have to choose keypoints based on its recognition value. Therefore, we only want to select keypoints that are highly likely to be found in a different image showing the same scene. This means a good keypoint should be invariant to numerous transformations such as rotation, scale, distortion and brightness, but also to change in illumination, 3D viewpoint and addition of noise. Of course, it is hard to satisfy all these properties, but the Scale Invariant Feature Transform satisfies most of them which will be further examined in this paper. 
 	
@@ -79,12 +79,12 @@
 				\label{subfig:org} 
 			\end{subfigure} 
 			~ 
-			\begin{subfigure}[normla]{0.3\textwidth}  
+			\begin{subfigure}[normla]{0.3\textwidth} 
 				\includegraphics[width=4.5cm]{images/DoG_at_sigma_13.png} 
 				\caption{DoG with $\sigma_1$=12?, $\sigma_2$=14?} 
 				\label{subfig:org} 
 			\end{subfigure} 
-			\caption{This figure shows the impact of the Gaussian blur with different scales $\sigma$ on an image in its top row. Every image at the bottom depicts a normalized version of the difference between such two Gaussian images. A gray pixel value indicates no difference between the two Gaussians at that location, whereas black and white pixels reveal their disparity. Original image taken from \cite{Lenna}} 
+			\caption{This figure shows the impact of the Gaussian blur with different scales $\sigma$ on an image in its top row. Every image at the bottom depicts a normalized version of the difference between such two Gaussian images. A gray pixel value indicates no difference between the two Gaussians at that location, whereas black and white pixels reveal their disparity. Original image was taken from \cite{Lenna}} 
 		\end{center} 
 	\end{figure} 
 
@@ -125,7 +125,7 @@
 			\end{subfigure} 
 			
 			\caption{This figure shows the basic concept of finding scale-space extrema. Gaussian-blurred images with increasing standard deviation (from bottom to top) are depicted on the left side of (a). They are grouped by size, where each group forms an octave. Subtracting every two neighboured Gaussians results in a Difference of Gaussian (DoG) pyramid, shown in (a) on the right. 
-			In (b) an "X"-marked pixel in one of these DoGs in being compared to its 26 neighbours, including those lying in adjacent DoGs. Only if that pixel holds the highest or lowest value of its surroundings it is considered to be a scale-space maximum or minimum, respectively. Images taken from \cite{SIFT}} 
+			In (b) an "X"-marked pixel in one of these DoGs in being compared to its 26 neighbours, including those lying in adjacent DoGs. Only if that pixel holds the highest or lowest value of its surroundings it is considered to be a scale-space maximum or minimum, respectively. Images were taken from \cite{SIFT}} 
 		\end{center} 
 	\end{figure} 
 	
@@ -153,8 +153,7 @@
 	\begin{figure}[h]
 		\begin{center} 
 			\includegraphics[width=10cm]{images/keypoint-refinement.png} 
-			\caption{This figure shows an illustation of a 3D quadratic surface. A red "x" marks a sample point of the scale-space function $D$ and the green "x" marks the precise peak of the surface.
-			Image taken from \cite{quadraticFunction}}
+			\caption{This figure shows an illustation of a 3D quadratic surface. A red "x" marks a sample point of the scale-space function $D$ and the green "x" marks the precise peak of the surface. Image was taken from \cite{quadraticFunction}}
 			\label{subfig:quadraticFunction} 
 		\end{center}
 	\end{figure}
@@ -184,20 +183,20 @@
 	
 	\begin{figure}[h]
 		\begin{center} 
-			\begin{subfigure}{0.3\textwidth} 
-				\includegraphics[width=4.5cm]{images/straight_line.png} 
+			\begin{subfigure}{0.31\textwidth} 
+				\includegraphics[width=4.7cm]{images/straight_line.png} 
 				\caption{}
 				\label{subfig:straigh_line} 
 			\end{subfigure} 
 			~ 
-			\begin{subfigure}{0.3\textwidth} 
-				\includegraphics[width=4.5cm]{images/line_patch.png} 
+			\begin{subfigure}{0.31\textwidth} 
+				\includegraphics[width=4.7cm]{images/line_patch.png} 
 				\caption{}
 				\label{subfig:center_patch} 
 			\end{subfigure} 
 			~ 
-			\begin{subfigure}{0.3\textwidth} 
-				\includegraphics[width=4.5cm]{images/corner_patch.png} 
+			\begin{subfigure}{0.31\textwidth} 
+				\includegraphics[width=4.7cm]{images/corner_patch.png} 
 				\caption{}
 				\label{subfig:end_patch} 
 			\end{subfigure}  
@@ -236,20 +235,24 @@
 	
 	There are many possibilities to describe the area around a keypoint. For instance we could be storing the intensity or color values inside our feature descriptor. However, the disadvantage of this approach would be that many images are taken under different lighting conditions. Hence corresponding keypoints would be prone to change in illumination. Image gradients are a better choice for constructing a feature descriptor, because they only affected by change of pixel intensity, rather than intensity values itself.
 	
+	\begin{figure}[h]
+		\begin{center} 
+			\includegraphics[width=15cm]{images/descriptor.jpg} 
+			\caption{The left side shows a 8x8 neighbourhood of image gradients around a keypoint. The blue circle is supposed to indicate that each gradient is weighted by a 2D Gaussian function. As shown on the right These gradients are organized in 4 histograms each accumulating a 4x4 subregions. However the original version of SIFT by David Lowe uses a 16x16 neighbourhood, resulting in 16 histograms of 4x4 subregions. Image was taken from \cite{SIFT}} 
+		\end{center} 
+	\end{figure} 
+	
 	%relative gradient directions / rotated 16x16 neighbourhood 
 	We use the scale of each keypoint to select the image from our Gaussian pyramid with the closest scale and compute all gradient directions and magitudes in a 16x16 pixel neighbourhood around that keypoint. All gradient directions are rotated relative to keypoint's orientation so that our feature descriptors achieve rotational invariance.
 	
-	The gradient neighbourhood is split up into 4x4 cells, so there will be a total of 16 cells. Analogous to section 2.4 each cell accumulates its gradients in an orientation histogram, but this time with only 8 bins, which keeps the final descriptor small.
-	 
-	The feature descriptor is actually just a sequence of linking all values of every cell histogram together in a consistent manner.  Every keypoint uses 4x4 cells with 8 orientation bins each. Thus accumulating all these values in a single descriptor, results in a 128 dimensional vector. 
+	The gradient neighbourhood is split up into 4x4 cells, so there will be a total of 16 cells. The Analogous to section 2.4 each cell accumulates its gradients in an orientation histogram, but this time with only 8 bins, which keeps the descriptor small. Each gradient is not only weighted by its magnitude, but also by a 2D Gaussian function with its origin at the keypoint's center. This means that gradients which are close to the center will have a stronger influence on the feature descriptor than those further away which might describe the background. This also helps with non-rigid objects, because central gradient directions around each keypoint are less likely to change. 
 	
-	Experiments show that normalizing the vector to unit length helps to cope with illumination changes. By limiting every orientation value in the cell histogram to a maximum of 0.2, we guarantee that no single dominant gradient can suppress the other gradients. Have multiple strong orientations in our final descriptor is more desirable than having a single dominant one, because "non-linear illumination changes can also occur due to camera saturation or due to illumination changes that affect 3D surfaces with differing orientations by different amounts" \cite[p. 15]{SIFT}. 
+	The feature descriptor is actually just a sequence of linking all values of every histogram together in a consistent manner. Since every keypoint uses 4x4 cells with 8 orientation bins each, accumulating all these values in a single descriptor, results in a 128 dimensional vector. This vector is normalized to unit length in order to make it more comparable with other descriptors. 
 	
-	%\section{(Matching)} 
+	%Experiments show that normalizing the vector to unit length helps to cope with illumination changes. Have multiple strong orientations in our final descriptor is more desirable than having a single dominant one, because "non-linear illumination changes can also occur due to camera saturation or due to illumination changes that affect 3D surfaces with differing orientations by different amounts" \cite[p. 16]{SIFT}. 
 	
 	\section{Problem cases} 
-	[We have seen that SIFT is a sophisticated algorithm], but computing SIFT features on large images takes 
-	SIFT features can be computed relatively fast, however matching over a vast database might still take a long time. Herbert Bay addresses this problem in his publication "Speeded Up Robust Features" (SURF) from 2006. His SURF features are based on SIFT and can be computed even faster. Their smaller 64 dimensional descriptor allows for faster matching of its features with only minor loss in accuracy. Hence they might be better suited for some applications which require real-time. 
+	We have seen that SIFT is a sophisticated algorithm, but computing SIFT features on large images will take a fair amount of time. Herbert Bay addresses this problem in his publication "Speeded Up Robust Features" (SURF) from 2006 \cite{SURF}. His SURF features are based on SIFT, but can be computed much faster. Their smaller 64 dimensional descriptor also allows for faster matching of its features with only minor loss in accuracy. Hence they might be better suited for video analysis or some applications that require real-time computation.
 	
 	%In one picture a subject might be well lit by sunshine, whereas another picture of the same scene might be taken in cloud weather. The first will have a strong contrast due to shadows, whereas the other will have flat contrast. As mentioned in the previous section, the large magnitude of strong gradients is being restrained and normalized when constructing the feature descriptor, so the deviation of contrast only shows a weak impact on the final feature descriptor. However, Shadows also tend to cause strong gradients in a direction which is determined, not by the object, but the position of the light source. This might lead to the corruption of some feature descriptors. 
 	
@@ -260,16 +263,7 @@
 	Another difficult situtation might be if an picture shows multiple occurrences of the same object. For instance a fence consists of many pickets, which all have a similar shape and hence generate similar SIFT features, which only vary due to the diversity of the background. 
 	Having repetitive structures in one scene might lead to false matches of correspondences, called outliers. %...
 	
-	%\begin{figure}[h]
-	%	\begin{center} 
-	%		\includegraphics[width=6.5cm]{images/fence.png} 
-	%		\label{subfig:fence} 
-	
-	%		\caption{} 
-	%	\end{center} 
-	%\end{figure} 
-	
-	Repetative structures are not he 
+	Repetative structures are not the only 
 	
 	\section{Conclusion} 
 	

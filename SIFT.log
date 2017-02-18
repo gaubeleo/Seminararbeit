@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.9)  18 FEB 2017 20:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6100 64-bit) (preloaded format=pdflatex 2017.1.9)  18 FEB 2017 22:29
 entering extended mode
 **./SIFT.tex
 (SIFT.tex
@@ -391,10 +391,10 @@ Package pdftex.def Info: images/keypoint-refinement.png used on input line 155.
 File: images/straight_line.png Graphic file (type png)
 
 <use images/straight_line.png>
-Package pdftex.def Info: images/straight_line.png used on input line 188.
-(pdftex.def)             Requested size: 128.0374pt x 128.0396pt.
+Package pdftex.def Info: images/straight_line.png used on input line 187.
+(pdftex.def)             Requested size: 133.72786pt x 133.7314pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 188--189
+Overfull \hbox (2.10716pt too wide) in paragraph at lines 187--188
 [][] 
  []
 
@@ -402,10 +402,10 @@ Overfull \hbox (0.66023pt too wide) in paragraph at lines 188--189
 File: images/line_patch.png Graphic file (type png)
 
 <use images/line_patch.png>
-Package pdftex.def Info: images/line_patch.png used on input line 194.
-(pdftex.def)             Requested size: 128.0374pt x 128.0901pt.
+Package pdftex.def Info: images/line_patch.png used on input line 193.
+(pdftex.def)             Requested size: 133.72786pt x 133.78247pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 194--195
+Overfull \hbox (2.10716pt too wide) in paragraph at lines 193--194
 [][] 
  []
 
@@ -413,19 +413,30 @@ Overfull \hbox (0.66023pt too wide) in paragraph at lines 194--195
 File: images/corner_patch.png Graphic file (type png)
 
 <use images/corner_patch.png>
-Package pdftex.def Info: images/corner_patch.png used on input line 200.
-(pdftex.def)             Requested size: 128.0374pt x 128.0901pt.
+Package pdftex.def Info: images/corner_patch.png used on input line 199.
+(pdftex.def)             Requested size: 133.72786pt x 133.78247pt.
 
-Overfull \hbox (0.66023pt too wide) in paragraph at lines 200--201
+Overfull \hbox (2.10716pt too wide) in paragraph at lines 199--200
 [][] 
  []
 
 [5 <./images/straight_line.png> <./images/line_patch.png> <./images/corner_patc
-h.png>] [6] (SIFT.bbl
+h.png>] <images/descriptor.jpg, id=46, 577.15625pt x 275.0275pt>
+File: images/descriptor.jpg Graphic file (type jpg)
+
+<use images/descriptor.jpg>
+Package pdftex.def Info: images/descriptor.jpg used on input line 240.
+(pdftex.def)             Requested size: 426.79134pt x 203.38287pt.
+
+Overfull \hbox (2.2051pt too wide) in paragraph at lines 240--241
+ [] 
+ []
+
+[6 <./images/descriptor.jpg>] (SIFT.bbl [7]
 ! Misplaced alignment tab character &.
 <argument> ...u/database/database.php?volume=misc&
-                                                  image=12##top
-l.48 ...ase/database.php?volume=misc&image=12#top}
+                                                  image=12
+l.48 ...atabase/database.php?volume=misc&image=12}
                                                   
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
@@ -434,34 +445,19 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-! You can't use `macro parameter character #' in horizontal mode.
-<argument> .../database.php?volume=misc&image=12##
-                                                  top
-l.48 ...ase/database.php?volume=misc&image=12#top}
-                                                  
-Sorry, but I'm not programmed to handle this case;
-I'll just pretend that you didn't ask for it.
-If you're in the wrong mode, you might be able to
-return to the right one by typing `I}' or `I$' or `I\par'.
-
-
-Underfull \hbox (badness 7595) in paragraph at lines 47--50
-[]\OT1/cmr/m/n/10 USC SIPI Im-age Database. Lenna. [On-line]. Avail-able:
- []
-
-) [7] (SIFT.aux)
+) [8] (SIFT.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4018 strings out of 493333
- 62239 string characters out of 3139201
- 130119 words of memory out of 3000000
- 7478 multiletter control sequences out of 15000+200000
+ 4024 strings out of 493333
+ 62362 string characters out of 3139201
+ 130122 words of memory out of 3000000
+ 7483 multiletter control sequences out of 15000+200000
  10506 words of font info for 38 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,7n,40p,789b,526s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 42i,7n,40p,794b,526s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Pr
 ogram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx9.pfb><C:/Program Fil
 es/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTe
@@ -477,9 +473,9 @@ gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files
 pe1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmti10.pfb>
-Output written on SIFT.pdf (7 pages, 1930175 bytes).
+Output written on SIFT.pdf (8 pages, 1979212 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
+ 108 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 61 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 66 words of extra memory for PDF output out of 10000 (max. 10000000)
 

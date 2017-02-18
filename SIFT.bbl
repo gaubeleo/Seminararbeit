@@ -44,8 +44,8 @@ M.~Brown and D.~G. Lowe, ``Automatic panoramic image stitching using invariant
 
 \bibitem{Lenna}
 \BIBentryALTinterwordspacing
-{USC SIPI Image Database}. Lenna. [Online]. Available:
-  \url{http://sipi.usc.edu/database/database.php?volume=misc&image=12#top}
+ [Online]. Available:
+  \url{http://sipi.usc.edu/database/database.php?volume=misc&image=12}
 \BIBentrySTDinterwordspacing
 
 \bibitem{edgeDetection}
@@ -63,5 +63,13 @@ M.~Basu, ``Gaussian-based edge-detection methods-a survey,'' \emph{IEEE
 T.~Xue, H.~Mobahi, F.~Durand, and W.~T. Freeman, ``The aperture problem for
   refractive motion,'' in \emph{2015 IEEE Conference on Computer Vision and
   Pattern Recognition (CVPR)}, June 2015, pp. 3386--3394.
+
+\bibitem{SURF}
+\BIBentryALTinterwordspacing
+H.~Bay, A.~Ess, T.~Tuytelaars, and L.~Van~Gool, ``Speeded-up robust features
+  (surf),'' \emph{Comput. Vis. Image Underst.}, vol. 110, no.~3, pp. 346--359,
+  Jun. 2008. [Online]. Available:
+  \url{http://dx.doi.org/10.1016/j.cviu.2007.09.014}
+\BIBentrySTDinterwordspacing
 
 \end{thebibliography}

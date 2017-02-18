@@ -22,7 +22,7 @@
 \newlabel{sub@subfig:org}{{e}{2}}
 \newlabel{subfig:org}{{1f}{2}}
 \newlabel{sub@subfig:org}{{f}{2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces This figure shows the impact of the Gaussian blur with different scales $\sigma $ on an image in its top row. Every image at the bottom depicts a normalized version of the difference between such two Gaussian images. A gray pixel value indicates no difference between the two Gaussians at that location, whereas black and white pixels reveal their disparity. Original image taken from \cite  {Lenna}\relax }}{2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces This figure shows the impact of the Gaussian blur with different scales $\sigma $ on an image in its top row. Every image at the bottom depicts a normalized version of the difference between such two Gaussian images. A gray pixel value indicates no difference between the two Gaussians at that location, whereas black and white pixels reveal their disparity. Original image was taken from \cite  {Lenna}\relax }}{2}}
 \citation{SIFT}
 \citation{SIFT}
 \citation{edgeDetection}
@@ -30,12 +30,12 @@
 \newlabel{sub@subfig:DoG_concept}{{a}{3}}
 \newlabel{subfig:scale_space_extrema}{{2b}{3}}
 \newlabel{sub@subfig:scale_space_extrema}{{b}{3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces This figure shows the basic concept of finding scale-space extrema. Gaussian-blurred images with increasing standard deviation (from bottom to top) are depicted on the left side of (a). They are grouped by size, where each group forms an octave. Subtracting every two neighboured Gaussians results in a Difference of Gaussian (DoG) pyramid, shown in (a) on the right. In (b) an "X"-marked pixel in one of these DoGs in being compared to its 26 neighbours, including those lying in adjacent DoGs. Only if that pixel holds the highest or lowest value of its surroundings it is considered to be a scale-space maximum or minimum, respectively. Images taken from \cite  {SIFT}\relax }}{3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces This figure shows the basic concept of finding scale-space extrema. Gaussian-blurred images with increasing standard deviation (from bottom to top) are depicted on the left side of (a). They are grouped by size, where each group forms an octave. Subtracting every two neighboured Gaussians results in a Difference of Gaussian (DoG) pyramid, shown in (a) on the right. In (b) an "X"-marked pixel in one of these DoGs in being compared to its 26 neighbours, including those lying in adjacent DoGs. Only if that pixel holds the highest or lowest value of its surroundings it is considered to be a scale-space maximum or minimum, respectively. Images were taken from \cite  {SIFT}\relax }}{3}}
 \citation{quadraticFunction}
 \citation{quadraticFunction}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Keypoint refinement}{4}}
 \newlabel{eq:taylor}{{3}{4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces This figure shows an illustation of a 3D quadratic surface. A red "x" marks a sample point of the scale-space function $D$ and the green "x" marks the precise peak of the surface. Image taken from \cite  {quadraticFunction}\relax }}{4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces This figure shows an illustation of a 3D quadratic surface. A red "x" marks a sample point of the scale-space function $D$ and the green "x" marks the precise peak of the surface. Image was taken from \cite  {quadraticFunction}\relax }}{4}}
 \newlabel{subfig:quadraticFunction}{{3}{4}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Keypoint filtering}{4}}
 \citation{aperture}
@@ -48,15 +48,19 @@
 \@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The left image shows a straight line. The other two are up-scaled patches taken from the left image. Even for a human, it would be impossible to tell from which exact location the patch in the middle originally came from. However, the patch on the right can easily be localized at the left end of the line.\relax }}{5}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Orientation assignment}{5}}
 \citation{SIFT}
+\citation{SIFT}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Constructing the feature descriptor}{6}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Problem cases}{6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces The left side shows a 8x8 neighbourhood of image gradients around a keypoint. The blue circle is supposed to indicate that each gradient is weighted by a 2D Gaussian function. As shown on the right These gradients are organized in 4 histograms each accumulating a 4x4 subregions. However the original version of SIFT by David Lowe uses a 16x16 neighbourhood, resulting in 16 histograms of 4x4 subregions. Image was taken from \cite  {SIFT}\relax }}{6}}
+\citation{SURF}
 \bibstyle{IEEEtran}
 \bibdata{SIFT}
 \bibcite{SIFT}{1}
 \bibcite{humanGestures}{2}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Problem cases}{7}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion}{7}}
 \bibcite{panorama}{3}
 \bibcite{Lenna}{4}
 \bibcite{edgeDetection}{5}
 \bibcite{quadraticFunction}{6}
 \bibcite{aperture}{7}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Conclusion}{7}}
+\bibcite{SURF}{8}
